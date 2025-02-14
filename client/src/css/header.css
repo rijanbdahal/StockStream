@@ -1,0 +1,65 @@
+/* Ensure the header is fixed at the top of the page */
+header {
+    background-color: #000000;  /* Black background */
+    color: white;               /* White text color */
+    padding: 20px;              /* Padding around the content */
+    display: flex;              /* Use flexbox for layout */
+    justify-content: space-between;  /* Space out the logo and navigation */
+    align-items: center;        /* Align items vertically */
+    position: fixed;            /* Fix the header at the top */
+    top: 0;                     /* Place it at the very top */
+    left: 0;                    /* Align to the left */
+    width: 100%;                /* Ensure it spans the full width */
+    z-index: 1000;              /* Ensure it stays above other content */
+}
+
+/* Add padding to the top of the page content to prevent overlap with the header */
+body {
+    padding-top: 80px; /* Adjust the padding to match the header height */
+}
+
+/* Inner header container */
+.header {
+    display: flex;              /* Flexbox for inner header */
+    justify-content: space-between;  /* Space between logo and navigation */
+    width: 100%;                /* Full width */
+    align-items: center;        /* Vertically align items */
+}
+
+/* Logo image */
+.header img {
+    height: 50px;               /* Adjust the height of the logo */
+    width: auto;                /* Maintain aspect ratio */
+}
+
+/* Navigation styles */
+.header ul {
+    display: flex;              /* Flexbox for navigation items */
+    list-style-type: none;      /* Remove bullets from the list */
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for each list item in the navigation */
+.header ul li {
+    margin-left: 20px;          /* Space between list items */
+}
+
+/* Link styles */
+.header ul li a {
+    text-decoration: none;      /* Remove underline */
+    color: white;               /* White text color for links */
+    font-size: 16px;            /* Font size */
+    font-weight: bold;          /* Bold text */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect on links */
+.header ul li a:hover {
+    color: #F55139;             /* Change link color to bright orange on hover */
+}
+
+/* Active link color */
+.header ul li a.active {
+    color: #F55139;             /* Set active link color to bright orange */
+}

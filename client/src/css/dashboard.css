@@ -1,0 +1,122 @@
+/* General reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d3d3d3; /* Light grey background */
+    color: #333; /* Dark text for contrast */
+}
+
+/* Dashboard container styling */
+.dashboard-container {
+    padding: 40px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+}
+
+/* Heading styling */
+.dashboard-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black; /* Bright orange heading */
+}
+
+/* Description text styling */
+.dashboard-description {
+    font-size: 1.2rem;
+    color: #7f8c8d; /* Lighter text color for description */
+    margin-bottom: 30px;
+}
+
+/* Card container to display multiple cards */
+.dashboard-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Individual card styling */
+.card {
+    background-color: #333333; /* Dark background for cards */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Ensure card takes 100% width on small screens */
+    min-width: 250px;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Card heading styling */
+.card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #F55139; /* Bright orange color for card headings */
+}
+
+/* Card button styling */
+.card-button {
+    padding: 12px 20px;
+    background-color: #F55139; /* Bright orange background */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase; /* Capitalize the button text */
+}
+
+/* Card button hover effect */
+.card-button:hover {
+    background-color: #e04e2e; /* Slightly darker shade of orange for hover effect */
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 768px) {
+    .dashboard-cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .card {
+        width: 80%; /* Make cards wider on smaller screens */
+    }
+
+    .dashboard-description {
+        font-size: 1rem; /* Adjust description text size */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dashboard-container {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .dashboard-container h1 {
+        font-size: 2rem; /* Slightly smaller heading */
+    }
+
+    .card {
+        width: 90%; /* Make cards take most of the width on small screens */
+    }
+
+    .card-button {
+        font-size: 0.9rem; /* Smaller font size for buttons */
+    }
+}
