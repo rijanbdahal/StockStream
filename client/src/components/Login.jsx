@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/login.css'; // Adjust the path if necessary
 
@@ -8,6 +8,14 @@ const Login = () => {
     const [userPassword, setUserPassword] = useState('');
     const [error, setError] = useState('');
 
+    useEffect(() => {
+        const authToken = localStorage.getItem('authToken');
+        if (authToken) {
+            navigate('/dashboard');
+            return;
+        }
+        
+    })
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 

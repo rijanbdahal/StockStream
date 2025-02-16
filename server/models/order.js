@@ -8,7 +8,7 @@ const orderSchema = new Schema({
     volume: { type: Number, required: true },
     placedAt: { type: Date, required: true },
     toBeFulfilledBy: { type: Date, required: true },
-    status: { type: Number, required: true },
+    status: { type: Boolean, required: true },
     urgent: { type: Boolean, required: true }
 });
 

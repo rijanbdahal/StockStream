@@ -1,0 +1,101 @@
+/* Scoped styles for the InquiryLocation page */
+.inquiry-location {
+    background-color: #f4f6f9; /* Light grey background */
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.inquiry-location h2 {
+    font-size: 2rem;
+    color: #34495e; /* Dark grey color */
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.inquiry-location form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.inquiry-location form div {
+    margin-bottom: 15px;
+}
+
+.inquiry-location label {
+    display: block;
+    font-size: 1rem;
+    color: #34495e; /* Dark grey for labels */
+    margin-bottom: 8px;
+}
+
+.inquiry-location input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9; /* Light background for input fields */
+}
+
+.inquiry-location input:focus {
+    border-color: #3498db; /* Blue border on focus */
+    outline: none;
+}
+
+.inquiry-location button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #F55139; /* Bright orange background */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.inquiry-location button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.inquiry-location button:hover:not(:disabled) {
+    background-color: #e04e2e; /* Darker orange on hover */
+}
+
+/* Error and Loading Messages */
+.inquiry-location p {
+    color: #e74c3c; /* Red for error messages */
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.inquiry-location p:nth-child(n+2) {
+    color: #3498db; /* Blue for loading messages */
+}
+
+/* Available/Unavailable Status */
+.inquiry-location div {
+    margin-top: 20px;
+}
+
+.inquiry-location button {
+    width: auto;
+    margin-top: 10px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 600px) {
+    .inquiry-location form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .inquiry-location button {
+        width: 100%;
+    }
+}

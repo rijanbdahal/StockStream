@@ -8,7 +8,8 @@ const productSchema = new Schema({
     productLength: { type: Number, required: true },
     productWidth: { type: Number, required: true },
     expiryDate: { type: Date, required: true },
-    palletID: { type: Number, ref: 'Pallet', required: true }
+    palletID: { type: Number, ref: 'Pallet', required: true },
+    itemWeight: { type: Number, required: true }
 });
 
 const Product = mongoose.models.Product || mongoose.model("Product",productSchema);

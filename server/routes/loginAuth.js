@@ -23,9 +23,24 @@ router.post("/", async (req, res) => {
             return res.status(500).json({ msg: "JWT Secret not configured" });
         }
 
-        const token = jwt.sign({ id:userId, userRole: userRole}, process.env.JWT_SECRET, { expiresIn: "1h" });
-        res.cookie("token", token, { httpOnly: true,secure: false,sameSite: "Strict" });
+        const token = jwt.sign(
+            {
+                id: user.userId,
+                userRole: user.userRole,
+                userName: user.userName,
+                userEmployeeId: user.userEmployeeId}, // Fixed userRole reference
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
+        );
+
+        res.cookie("token", token,
+            {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: "Strict" });
         res.json({ message: "Login successful", token });
+
+
 
     } catch (error) {
         console.error(error);

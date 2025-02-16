@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
-
-const locationSchema = new Schema({
+const locationSchema = new mongoose.Schema({
     locationId: { type: String, required: true, unique: true },
     aisle: { type: String, required: true },
     rowNumber: { type: String, required: true },
@@ -10,5 +9,5 @@ const locationSchema = new Schema({
     status: { type: Boolean, required: true },
 });
 
-const Location = mongoose.models.Location || mongoose.model("Location",locationSchema);
+const Location = mongoose.model("Location", locationSchema, "location");
 module.exports = Location;
