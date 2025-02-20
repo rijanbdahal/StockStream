@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const orderSchema = new Schema({
+const orderSchema = new mongoose.Schema({
     orderNumber: { type: Number, required: true, unique: true },
     storeNumber: { type: Number, required: true },
     totalCases: { type: Number, required: true },

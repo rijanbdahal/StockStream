@@ -7,6 +7,8 @@ const registrationAuth = require("./routes/registrationAuth.js");
 const authRoutes = require("./routes/authUser.js");
 const userAuth = require("./routes/userAuth.js");
 const locationAuth = require("./routes/locationAuth.js");
+const dockingEntryAuth = require("./routes/dockingEntryAuth.js");
+const dockingEntryQueryAuth = require("./routes/dockingEntryQueryAuth.js");
 
 dotenv.config();
 
@@ -35,6 +37,8 @@ app.use('/registrationAuth', registrationAuth);
 app.use('/authRoutes', authRoutes);
 app.use('/userAuth', userAuth);
 app.use('/locationAuth', locationAuth);
+app.use('/dockingEntryAuth' , dockingEntryAuth)
+app.use('/dockingEntryQueryAuth',dockingEntryQueryAuth)
 app.all('*', (req, res) => {
     res.status(404).send('Route not found');
 });

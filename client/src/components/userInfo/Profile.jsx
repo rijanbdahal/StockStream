@@ -14,10 +14,6 @@ const Profile = () => {
         // Retrieve the token from local storage
         const authToken = localStorage.getItem('authToken');
 
-        if (!authToken) {
-            navigate('/login'); // Redirect to login if no token found
-            return;
-        }
 
         // Send the token in the Authorization header
         axios.get('http://localhost:5000/authRoutes/api/auth/user', {

@@ -1,0 +1,124 @@
+/* General Styling */
+.docking-entry {
+    background-color: #f4f6f9; /* Light grey background */
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Page Title */
+.docking-entry h2 {
+    font-size: 2rem;
+    color: #34495e; /* Dark grey color */
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Form Styling */
+.docking-entry form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Group */
+.docking-entry .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.docking-entry label {
+    font-size: 1rem;
+    color: #34495e;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+.docking-entry input,
+.docking-entry select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Multi-select Styling */
+.docking-entry select[multiple] {
+    height: 100px;
+    overflow-y: auto;
+}
+
+/* Read-Only Input */
+.docking-entry input[readonly] {
+    background: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Submit Button */
+.docking-entry button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.docking-entry button:hover {
+    background-color: #2980b9;
+}
+
+/* Error & Success Messages */
+.docking-entry p {
+    font-size: 1rem;
+    padding: 8px;
+    text-align: center;
+}
+
+.docking-entry p[style*="color: red"] {
+    background-color: #ffe6e6;
+    color: red;
+    border-radius: 5px;
+}
+
+.docking-entry p[style*="color: green"] {
+    background-color: #e6ffe6;
+    color: green;
+    border-radius: 5px;
+}
+
+/* Link */
+.docking-entry a {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.docking-entry a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .docking-entry form {
+        width: 90%;
+    }
+}

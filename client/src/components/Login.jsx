@@ -10,10 +10,6 @@ const Login = () => {
 
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
-        if (authToken) {
-            navigate('/dashboard');
-            return;
-        }
         
     })
     const handleSubmit = async (e: React.FormEvent) => {

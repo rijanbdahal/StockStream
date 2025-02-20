@@ -1,7 +1,8 @@
 /* Scoped styles for the InquiryLocation page */
 .inquiry-location {
     background-color: #f4f6f9; /* Light grey background */
-    padding: 20px;
+    padding: 80px;
+
     font-family: 'Arial', sans-serif;
 }
 

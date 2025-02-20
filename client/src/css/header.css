@@ -2,7 +2,8 @@
 header {
     background-color: #000000;  /* Black background */
     color: white;               /* White text color */
-    padding: 20px;              /* Padding around the content */
+    height: 70px;               /* Fixed height to prevent distortion */
+    padding: 10px 20px;         /* Adjusted padding */
     display: flex;              /* Use flexbox for layout */
     justify-content: space-between;  /* Space out the logo and navigation */
     align-items: center;        /* Align items vertically */
@@ -11,11 +12,12 @@ header {
     left: 0;                    /* Align to the left */
     width: 100%;                /* Ensure it spans the full width */
     z-index: 1000;              /* Ensure it stays above other content */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow for depth */
 }
 
-/* Add padding to the top of the page content to prevent overlap with the header */
+/* Prevent the header from overlapping body content */
 body {
-    padding-top: 80px; /* Adjust the padding to match the header height */
+    padding-top: 70px; /* Match the header height exactly */
 }
 
 /* Inner header container */
@@ -62,4 +64,35 @@ body {
 /* Active link color */
 .header ul li a.active {
     color: #F55139;             /* Set active link color to bright orange */
+}
+
+/* Responsive Design: Stack items on small screens */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 15px;
+    }
+
+    .header ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .header ul li {
+        width: 100%;
+    }
+
+    .header ul li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+
+    body {
+        padding-top: 90px; /* Slightly more padding for mobile layout */
+    }
 }

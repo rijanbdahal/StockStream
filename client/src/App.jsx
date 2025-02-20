@@ -8,6 +8,8 @@ import Error from "./components/404.jsx";
 import UserInfo from "./components/supervisor/UserInfo.jsx";
 import Profile from "./components/userInfo/Profile.jsx";
 import InquiryLocation from "./components/supervisor/InquiryLocation.jsx";
+import DockingEntry from "./components/supervisor/DockingEntry.jsx";
+import QueryDockingEntry from "./components/supervisor/QueryDockingEntry.jsx";
 const App = () => {
     return (
         <Router>
@@ -20,6 +22,8 @@ const App = () => {
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="/profile" element={<Profile/>}/>
                 <Route path="/inquirelocation" element={<InquiryLocation/>}/>
+                <Route path="/dockingentry" element={<DockingEntry/>}/>
+                <Route path="/querydockingentry" element={<QueryDockingEntry/>}/>
 
                 <Route path="/" element={<HomePage />} />
 

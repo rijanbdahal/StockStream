@@ -12,6 +12,7 @@ const Header = () => {
                     <li><a href="/userinfo">Employee Query</a></li>
                     <li><a href="/profile">My Profile</a></li>
                     <li><a href="/inquirelocation">Location</a></li>
+                    <li><a href="/dockingentry">Docking</a></li>
 
                 </ul>
             </div>

@@ -1,6 +1,6 @@
 const mongoose =require("mongoose");
 
-const productSchema = new Schema({
+const productSchema = new mongoose.Schema({
     productID: { type: Number, required: true, unique: true },
     productSKU: { type: Number, required: true },
     productName: { type: String, required: true },
@@ -9,7 +9,8 @@ const productSchema = new Schema({
     productWidth: { type: Number, required: true },
     expiryDate: { type: Date, required: true },
     palletID: { type: Number, ref: 'Pallet', required: true },
-    itemWeight: { type: Number, required: true }
+    itemWeight: { type: Number, required: true },
+    locationId: { type: Number, required: true },
 });
 
 const Product = mongoose.models.Product || mongoose.model("Product",productSchema);

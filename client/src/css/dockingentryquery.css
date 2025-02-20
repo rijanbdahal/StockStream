@@ -1,0 +1,169 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d3d3d3; /* Light grey background */
+    color: #333; /* Dark text for contrast */
+}
+
+/* Main Container */
+.docking-entry-query {
+    padding: 40px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading Styling */
+.docking-entry-query h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Match form width with table for consistency */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.form-group {
+    width: 100%;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Submit Button */
+.form-group button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #F55139; /* Bright orange */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover */
+.form-group button:hover {
+    background-color: #e04e2e; /* Slightly darker shade of orange */
+}
+
+/* Message Styling */
+.message {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+/* Table Container - Ensures Layout Consistency */
+.table-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px; /* Matches form width */
+    overflow-x: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333; /* Dark background like cards */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #555;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #F55139; /* Bright orange for table header */
+    color: white;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .docking-entry-query {
+        padding: 20px;
+    }
+
+    .form-container, .table-container {
+        max-width: 90%;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .docking-entry-query h2 {
+        font-size: 2rem;
+    }
+
+    .form-container, .table-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    .form-group button {
+        font-size: 0.9rem;
+    }
+}
