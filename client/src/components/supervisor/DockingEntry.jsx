@@ -12,11 +12,11 @@ const DockingEntry = () => {
     const [success, setSuccess] = useState('');
     const [arrivalTime, setArrivalTime] = useState(null);
     const [dockingEntry, setDockingEntry] = useState({
-        consignmentID: 0,
-        manufacturerID: 0,
+        consignmentID: null,
+        manufacturerID: null,
         products: [],
-        totalPallets: 0,
-        doorNo: 0,
+        totalPallets: null,
+        doorNo: null,
         arrivalTime: '',
 
     });
@@ -57,6 +57,8 @@ const DockingEntry = () => {
         })
             .then((response) => {
                 setManufacturer(response.data);
+
+
             })
             .catch((error) => {
                 console.error("Error fetching manufacturers:", error);
@@ -93,6 +95,13 @@ const DockingEntry = () => {
                 .then((response) => {
                     console.log("Docking entry added successfully:", response.data);
                     setSuccess("Docking entry added successfully.");
+                    setDockingEntry({
+                        consignmentID: null,
+                        manufacturerID: null,
+                        products: [],
+                        totalPallets: null,
+                        doorNo: null,
+                    });
                 })
                 .catch((error) => {
                     console.error("Error submitting docking entry:", error);
@@ -124,8 +133,9 @@ const DockingEntry = () => {
     if (loading) return <div>Loading...</div>;
 
     return (
-        <div className="docking-entry">
+        <div>
             <Header />
+            <div className="docking-entry">
             <h2>Docking Entry Form</h2>
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
@@ -219,6 +229,7 @@ const DockingEntry = () => {
                 <button type="submit">Submit</button>
                 <a href="./querydockingentry"> Find Docking Entry Here! </a>
             </form>
+        </div>
         </div>
     );
 };

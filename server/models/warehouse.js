@@ -10,49 +10,17 @@ const manufacturerSchema = new Schema({
     emailAddress: { type: String, required: true }
 });
 
-// Receiving Consignment Schema
 const receivingConsignmentSchema = new Schema({
     consignmentID: { type: Number, required: true, unique: true },
-    manufacturerID: { type: Number, ref: 'Manufacturer', required: true },
-    arrivalTime: { type: Date, required: true },
-    totalPallets: { type: Number, required: true }
+    totalPallets: { type: Number, required: true },
+    totalProductsW: { type: Number, required: true },
 });
 
-
-// Task Schema
 const taskSchema = new Schema({
     taskId: { type: Number, required: true, unique: true },
     orderNumber: { type: Number, required: true },
-    user: { type: Number, ref: 'User', required: true },
-    completed: { type: Boolean, required: true },
-    checkDigit: { type: Number, required: true },
-    quantity: { type: Number },
-    locationID: { type: Number, ref: 'Location' }
-});
-
-
-// Shipping Consignment Schema
-const shippingConsignmentSchema = new Schema({
-    shippingId: { type: Number, required: true, unique: true },
-    totalPallets: { type: Number, required: true },
-    truckNumber: { type: Number, required: true },
-    status: { type: Number, required: true },
-    userID: { type: Number, ref: 'User', required: true }
-});
-
-// Define specific roles
-const receiverSchema = new Schema({
-    userID: { type: Number, required: true, unique: true }
-});
-
-const shipperSchema = new Schema({
-    userID: { type: Number, required: true, unique: true },
-    taskId: { type: Number, ref: 'Task', required: true }
-});
-
-const pickerSchema = new Schema({
-    userID: { type: Number, required: true, unique: true },
-    taskId: { type: Number, ref: 'Task', required: true }
+    userId: { type: Number, required: true },
+    isCompleted: { type: Boolean, required: true }
 });
 
 const forkSchema = new Schema({
@@ -60,7 +28,6 @@ const forkSchema = new Schema({
     jobType: { type: String, required: true }
 });
 
-// Putaway Schema
 const putawaySchema = new Schema({
     orderNumber: { type: Number, required: true, unique: true },
     fromLocation: { type: Number, required: true },

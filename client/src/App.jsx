@@ -10,6 +10,11 @@ import Profile from "./components/userInfo/Profile.jsx";
 import InquiryLocation from "./components/supervisor/InquiryLocation.jsx";
 import DockingEntry from "./components/supervisor/DockingEntry.jsx";
 import QueryDockingEntry from "./components/supervisor/QueryDockingEntry.jsx";
+import ReceivingTask from "./employee/receiver/ReceivingTask.jsx";
+import PutAway from "./employee/forks/PutAway.jsx";
+import SelectingTaskDetails from "./employee/selector/SelectingTaskDetails.jsx";
+import ReadyPage from "./employee/selector/ReadyPage.jsx";
+import AssignSingleProductLocation from "./components/supervisor/AssignSingleProductLocation.jsx";
 const App = () => {
     return (
         <Router>
@@ -24,7 +29,11 @@ const App = () => {
                 <Route path="/inquirelocation" element={<InquiryLocation/>}/>
                 <Route path="/dockingentry" element={<DockingEntry/>}/>
                 <Route path="/querydockingentry" element={<QueryDockingEntry/>}/>
-
+                <Route path="/receivingtask" element={<ReceivingTask/>}/>
+                <Route path="/putaway" element={<PutAway/>}/>
+                <Route path="/selectingtaskdetails" element={<SelectingTaskDetails/>}/>
+                <Route path="/readypage" element={<ReadyPage/>}/>
+                <Route path="/assignsingleproductlocation" element={<AssignSingleProductLocation/>}/>
                 <Route path="/" element={<HomePage />} />
 
 

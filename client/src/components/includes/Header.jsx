@@ -13,6 +13,8 @@ const Header = () => {
                     <li><a href="/profile">My Profile</a></li>
                     <li><a href="/inquirelocation">Location</a></li>
                     <li><a href="/dockingentry">Docking</a></li>
+                    <li><a href="/receivingtask">Receiving</a></li>
+                    <li><a href="/putaway">Putaway</a></li>
 
                 </ul>
             </div>

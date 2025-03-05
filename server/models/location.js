@@ -5,9 +5,10 @@ const locationSchema = new mongoose.Schema({
     aisle: { type: String, required: true },
     rowNumber: { type: String, required: true },
     columnNumber: { type: String, required: true },
-    checkDigit: { type: Number, required: true },
     status: { type: Boolean, required: true },
+    checkDigit: { type: Number, required: true }  // ✅ Add this field
 });
 
-const Location = mongoose.model("Location", locationSchema, "location");
+const Location = mongoose.models.Location || mongoose.model("Location", locationSchema);
+
 module.exports = Location;

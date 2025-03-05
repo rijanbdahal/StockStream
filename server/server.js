@@ -9,6 +9,10 @@ const userAuth = require("./routes/userAuth.js");
 const locationAuth = require("./routes/locationAuth.js");
 const dockingEntryAuth = require("./routes/dockingEntryAuth.js");
 const dockingEntryQueryAuth = require("./routes/dockingEntryQueryAuth.js");
+const receivingTaskAuth = require("./routes/receivingTaskAuth.js");
+const putawayAuth = require("./routes/putawayAuth.js");
+const selectingTask = require("./routes/selectingTask.js");
+const assignProductLocation = require("./routes/assignProductLocation.js");
 
 dotenv.config();
 
@@ -35,10 +39,14 @@ const PORT = process.env.PORT || 5000;
 app.use('/loginAuth', loginAuth);
 app.use('/registrationAuth', registrationAuth);
 app.use('/authRoutes', authRoutes);
+app.use('/receivingTaskAuth',receivingTaskAuth)
 app.use('/userAuth', userAuth);
 app.use('/locationAuth', locationAuth);
-app.use('/dockingEntryAuth' , dockingEntryAuth)
-app.use('/dockingEntryQueryAuth',dockingEntryQueryAuth)
+app.use('/dockingEntryAuth' , dockingEntryAuth);
+app.use('/dockingEntryQueryAuth',dockingEntryQueryAuth);
+app.use('/putawayAuth', putawayAuth);
+app.use('/selectingtask', selectingTask);
+app.use('/assignproductlocation' , assignProductLocation);
 app.all('*', (req, res) => {
     res.status(404).send('Route not found');
 });

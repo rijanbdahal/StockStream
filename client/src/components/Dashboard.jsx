@@ -41,7 +41,7 @@ const Dashboard = () => {
             <Header />
             <h1>Welcome to the Dashboard, {user?.userName}</h1>
             <p className="dashboard-description">
-                Here you can manage your account, track your progress, and access important resources.
+
             </p>
         </div>
     );
