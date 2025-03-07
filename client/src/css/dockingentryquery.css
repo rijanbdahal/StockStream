@@ -1,18 +1,15 @@
-/* General Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #d3d3d3; /* Light grey background */
-    color: #333; /* Dark text for contrast */
+    background-color: #d3d3d3;
+    color: #333;
 }
 
-/* Main Container */
 .docking-entry-query {
     padding: 40px;
     text-align: center;
@@ -20,20 +17,18 @@ body {
     margin: 0 auto;
 }
 
-/* Heading Styling */
 .docking-entry-query h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: black;
 }
 
-/* Form Container */
 .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 800px; /* Match form width with table for consistency */
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: white;
@@ -41,7 +36,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styling */
 .form-group {
     width: 100%;
     margin: 15px 0;
@@ -65,11 +59,10 @@ body {
     color: #333;
 }
 
-/* Submit Button */
 .form-group button {
     width: 100%;
     padding: 12px 20px;
-    background-color: #F55139; /* Bright orange */
+    background-color: #F55139;
     border: none;
     border-radius: 5px;
     color: white;
@@ -79,12 +72,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Button Hover */
 .form-group button:hover {
-    background-color: #e04e2e; /* Slightly darker shade of orange */
+    background-color: #e04e2e;
 }
 
-/* Message Styling */
 .message {
     font-size: 1.2rem;
     margin-top: 10px;
@@ -98,21 +89,19 @@ body {
     color: green;
 }
 
-/* Table Container - Ensures Layout Consistency */
 .table-container {
     margin-top: 20px;
     width: 100%;
-    max-width: 800px; /* Matches form width */
+    max-width: 800px;
     overflow-x: auto;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #333; /* Dark background like cards */
+    background-color: #333;
     color: white;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -125,12 +114,11 @@ th, td {
 }
 
 th {
-    background-color: #F55139; /* Bright orange for table header */
+    background-color: #F55139;
     color: white;
     font-weight: bold;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
     .docking-entry-query {
         padding: 20px;

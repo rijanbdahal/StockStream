@@ -10,7 +10,7 @@ const assignLocation = async () => {
     try {
         const availableLocation = await Location.findOne({
             status: true,
-            rowNumber: { $ne: '10' }
+            columnNumber: { $nin: ['10','14',,'18', '11','15','19'] }
         });
 
         console.log("Available location:", availableLocation);
@@ -47,7 +47,7 @@ router.post("/", async (req, res) => {
         // Check if the product exists
         const product = await Product.findOne({ productID });
         if (!product) {
-            return res.status(400).json({ msg: "No product found" });
+            return res.status(400).json({ msg: "No product found with provided ID" });
         }
 
         // Assign a storage location

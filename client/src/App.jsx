@@ -15,6 +15,9 @@ import PutAway from "./employee/forks/PutAway.jsx";
 import SelectingTaskDetails from "./employee/selector/SelectingTaskDetails.jsx";
 import ReadyPage from "./employee/selector/ReadyPage.jsx";
 import AssignSingleProductLocation from "./components/supervisor/AssignSingleProductLocation.jsx";
+import ReplenishTask from "./employee/forks/ReplenishTask.jsx";
+import ReleasePickingTask from "./components/supervisor/ReleasePickingTask.jsx";
+import SelectingTaskPick from "./employee/selector/SelectingTaskPick.jsx";
 const App = () => {
     return (
         <Router>
@@ -34,6 +37,9 @@ const App = () => {
                 <Route path="/selectingtaskdetails" element={<SelectingTaskDetails/>}/>
                 <Route path="/readypage" element={<ReadyPage/>}/>
                 <Route path="/assignsingleproductlocation" element={<AssignSingleProductLocation/>}/>
+                <Route path="/replenishtask" element={<ReplenishTask/>}/>
+                <Route path="/releasepickingtask" element={<ReleasePickingTask/>}/>
+                <Route path="/selectingtaskpick" element={<SelectingTaskPick/>}/>
                 <Route path="/" element={<HomePage />} />
 
 

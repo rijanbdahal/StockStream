@@ -1,5 +1,6 @@
 import React, {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
+import Header from "../../components/includes/Header.jsx";
 
 const SelectingTaskGo = () => {
     const [gotoLocation, setGotoLocation] = React.useState('');
@@ -21,6 +22,7 @@ const SelectingTaskGo = () => {
 
     return (
         <div>
+            <Header />
 
         </div>
     )

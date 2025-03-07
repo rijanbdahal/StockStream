@@ -1,21 +1,22 @@
 const express = require("express");
 const router = express.Router();
-const PickingOrder = require("../models/PickingOrder");
+const PickingOrder = require("../models/pickingTask");
 const Product = require("../models/Product");
 const PickingPallet = require("../models/PickingPallet");
+const PickingTask = require("../models/pickingTask");
+
+
 
 router.get("/details", async (req, res) => {
     try {
-        const selectingTask = await PickingOrder.findOne({ assignedStatus: false, completedStatus: false });
+        const selectingTask = await PickingTask.findOne({ completedStatus: false, assignedStatus: false }).sort({ toBeFulfilledBy: 1 });
 
         if (!selectingTask) {
             return res.status(200).json({ error: "No Task Available!" });
         }
 
-        await selectingTask.save(); // Ensure the change is persisted
-
         res.json({
-            taskId: selectingTask.orderNumber,
+            taskId: selectingTask.taskId,
             storeId: selectingTask.storeNumber,
             totalCases: selectingTask.totalCases,
             totalStop: selectingTask.totalStop,
@@ -46,9 +47,7 @@ router.post("/:taskId",async (req, res) => {
 });
 
 router.post("/pickingproductdetails",async (req, res) => {
-    try{
-        const productId
-    }
+
 })
 
 module.exports = router;

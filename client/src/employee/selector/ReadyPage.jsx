@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {useNavigate} from 'react-router-dom';
+import Header from "../../components/includes/Header.jsx";
 
 const ReadyPage = () =>{
 
@@ -13,6 +14,7 @@ const ReadyPage = () =>{
 
     return(
         <div>
+            <Header/>
             <form onSubmit={HandleReadyButton}>
                 <div class="form-group">
                     <label>Start Picking</label>

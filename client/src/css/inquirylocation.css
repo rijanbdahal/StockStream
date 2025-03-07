@@ -1,18 +1,15 @@
-/* Scoped styles for the InquiryLocation page */
 .inquiry-location {
-    background-color: #f4f6f9; /* Light grey background */
+    background-color: #f4f6f9;
     padding: 80px;
-
     font-family: 'Arial', sans-serif;
 }
 
 .inquiry-location h2 {
     font-size: 2rem;
-    color: #34495e; /* Dark grey color */
+    color: #34495e;
     margin-bottom: 20px;
 }
 
-/* Form Styling */
 .inquiry-location form {
     background-color: #fff;
     padding: 20px;
@@ -29,7 +26,7 @@
 .inquiry-location label {
     display: block;
     font-size: 1rem;
-    color: #34495e; /* Dark grey for labels */
+    color: #34495e;
     margin-bottom: 8px;
 }
 
@@ -39,24 +36,25 @@
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #f9f9f9; /* Light background for input fields */
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
 }
 
 .inquiry-location input:focus {
-    border-color: #3498db; /* Blue border on focus */
+    border-color: #3498db;
     outline: none;
 }
 
 .inquiry-location button {
     padding: 10px 15px;
     font-size: 1rem;
-    background-color: #F55139; /* Bright orange background */
+    background-color: #F55139;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .inquiry-location button:disabled {
@@ -65,21 +63,19 @@
 }
 
 .inquiry-location button:hover:not(:disabled) {
-    background-color: #e04e2e; /* Darker orange on hover */
+    background-color: #e04e2e;
 }
 
-/* Error and Loading Messages */
 .inquiry-location p {
-    color: #e74c3c; /* Red for error messages */
+    color: #e74c3c;
     font-size: 1rem;
     margin-top: 10px;
 }
 
 .inquiry-location p:nth-child(n+2) {
-    color: #3498db; /* Blue for loading messages */
+    color: #3498db;
 }
 
-/* Available/Unavailable Status */
 .inquiry-location div {
     margin-top: 20px;
 }
@@ -89,14 +85,20 @@
     margin-top: 10px;
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 600px) {
-    .inquiry-location form {
-        width: 100%;
-        padding: 15px;
+    .inquiry-location {
+        padding: 20px;
+    }
+
+    .inquiry-location h2 {
+        font-size: 1.8rem;
+    }
+
+    .inquiry-location label {
+        font-size: 1rem;
     }
 
     .inquiry-location button {
-        width: 100%;
+        font-size: 0.9rem;
     }
 }

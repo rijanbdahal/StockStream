@@ -1,72 +1,62 @@
-/* Ensure the header is fixed at the top of the page */
 header {
-    background-color: #000000;  /* Black background */
-    color: white;               /* White text color */
-    height: 70px;               /* Fixed height to prevent distortion */
-    padding: 10px 20px;         /* Adjusted padding */
-    display: flex;              /* Use flexbox for layout */
-    justify-content: space-between;  /* Space out the logo and navigation */
-    align-items: center;        /* Align items vertically */
-    position: fixed;            /* Fix the header at the top */
-    top: 0;                     /* Place it at the very top */
-    left: 0;                    /* Align to the left */
-    width: 100%;                /* Ensure it spans the full width */
-    z-index: 1000;              /* Ensure it stays above other content */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow for depth */
+    background-color: #000000;
+    color: white;
+    height: 70px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Prevent the header from overlapping body content */
 body {
-    padding-top: 70px; /* Match the header height exactly */
+    padding-top: 70px;
 }
 
-/* Inner header container */
 .header {
-    display: flex;              /* Flexbox for inner header */
-    justify-content: space-between;  /* Space between logo and navigation */
-    width: 100%;                /* Full width */
-    align-items: center;        /* Vertically align items */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
 }
 
-/* Logo image */
 .header img {
-    height: 50px;               /* Adjust the height of the logo */
-    width: auto;                /* Maintain aspect ratio */
+    height: 50px;
+    width: auto;
 }
 
-/* Navigation styles */
 .header ul {
-    display: flex;              /* Flexbox for navigation items */
-    list-style-type: none;      /* Remove bullets from the list */
+    display: flex;
+    list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-/* Style for each list item in the navigation */
 .header ul li {
-    margin-left: 20px;          /* Space between list items */
+    margin-left: 20px;
 }
 
-/* Link styles */
 .header ul li a {
-    text-decoration: none;      /* Remove underline */
-    color: white;               /* White text color for links */
-    font-size: 16px;            /* Font size */
-    font-weight: bold;          /* Bold text */
-    transition: color 0.3s ease; /* Smooth transition on hover */
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-/* Hover effect on links */
 .header ul li a:hover {
-    color: #F55139;             /* Change link color to bright orange on hover */
+    color: #F55139;
 }
 
-/* Active link color */
 .header ul li a.active {
-    color: #F55139;             /* Set active link color to bright orange */
+    color: #F55139;
 }
 
-/* Responsive Design: Stack items on small screens */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -93,6 +83,6 @@ body {
     }
 
     body {
-        padding-top: 90px; /* Slightly more padding for mobile layout */
+        padding-top: 90px;
     }
 }

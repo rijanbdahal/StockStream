@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Header from "../../components/includes/Header.jsx";
 
 const SelectingTaskDetails = () => {
     const navigate = useNavigate();
@@ -41,7 +42,7 @@ const SelectingTaskDetails = () => {
             .catch(error => {
                 console.log(error);
             })
-        navigate('/selectingtask');
+        navigate('/selectingtaskpick',{ state: { taskId } });
     }
 
     if (loading) {
@@ -54,6 +55,7 @@ const SelectingTaskDetails = () => {
 
     return (
         <div>
+            <Header/>
             <p>Task ID: {taskId}</p>
             <p>Store ID: {storeId}</p>
             <p>Total Cases: {totalCases}</p>

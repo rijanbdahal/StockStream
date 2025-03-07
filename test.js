@@ -27,7 +27,7 @@ function generateWarehouseLocations() {
     aisles.forEach(aisle => {
         rowNumbers.forEach(rowNumber => {
             columnNumbers.forEach(columnNumber => {
-                const locationId = `${aisle}${columnNumber}${rowNumber}`;
+                const locationId = `${aisle}${rowNumber}${columnNumber}`;
                 const checkDigit = Math.floor(Math.random() * 1000); // Random checkDigit
                 const status = Math.random() > 0.5; // Random status (true or false)
 

@@ -1,43 +1,59 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../includes/Header.jsx";
+import '../../css/assignsingleproduct.css';
 
 const AssignSingleProductLocation = () => {
-    const [productId, setProductId] = useState(null);
-    const [locationId, setLocationId] = useState('');
-    const [message, setMessage] = useState('');
+    const [productId, setProductId] = useState("");
+    const [locationId, setLocationId] = useState("");
+    const [message, setMessage] = useState({ text: "", type: "" });
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/assignproductlocation/products`)
+        setMessage({ text: "", type: "" }); // Reset message on mount
+        axios
+            .get("http://localhost:5000/assignproductlocation/products")
             .then((response) => {
                 setProducts(response.data);
             })
             .catch((err) => {
-                console.log(err);
+                console.error("Error fetching products:", err);
+                setMessage({ text: "Failed to load products.", type: "error" });
             });
     }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/assignproductlocation', {
-            productId: productId,
-            locationId: locationId,
-        }).then((response) => {
-            setMessage(response.data.msg); // Set the success message
-            // Reset the form fields
-            setProductId(null);  // Reset selected product
-            setLocationId('');   // Reset location input
-        }).catch((err) => {
-            console.log(err);
-        });
+        setMessage({ text: "", type: "" }); // Clear previous messages
+        setLoading(true);
+
+        try {
+            const response = await axios.post("http://localhost:5000/assignproductlocation", {
+                productId,
+                locationId,
+            });
+
+            setMessage({ text: response.data.msg || "Product location assigned successfully!", type: "success" });
+            setProductId("");
+            setLocationId("");
+        } catch (err) {
+            console.error("Error assigning product:", err);
+            setMessage({
+                text: err.response?.data?.msg || "Failed to assign location. Try again!",
+                type: "error",
+            });
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
-        <div>
+        <div className="container">
             <Header />
-            <h1>Assign Location For Product</h1>
-            <form onSubmit={handleSubmit}>
+            <h1 className="title">Assign Location for Product</h1>
+
+            <form onSubmit={handleSubmit} className="form">
                 <div className="form-group">
                     <label htmlFor="productId">Product:</label>
                     <select
@@ -62,13 +78,20 @@ const AssignSingleProductLocation = () => {
                         id="locationId"
                         value={locationId}
                         onChange={(e) => setLocationId(e.target.value)}
+                        required
                     />
                 </div>
 
-                <button type="submit">Submit</button>
+                <button type="submit" className="submit-btn" disabled={loading}>
+                    {loading ? "Submitting..." : "Submit"}
+                </button>
             </form>
 
-            {message && <p>{message}</p>}
+            {message.text && (
+                <p className={`message ${message.type}`} aria-live="polite">
+                    {message.text}
+                </p>
+            )}
         </div>
     );
 };

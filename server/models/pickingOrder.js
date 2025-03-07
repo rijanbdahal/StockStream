@@ -20,6 +20,6 @@ const PickingOrderSchema = new mongoose.Schema({
     ]
 });
 
-const PickingOrder = mongoose.models.PickingOrder || mongoose.model("PickingOrder", PickingOrderSchema);
+const PickingOrder = mongoose.models.PickingOrder || mongoose.model("PickingOrder",PickingOrderSchema);
 
 module.exports = PickingOrder;

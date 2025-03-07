@@ -2,7 +2,7 @@ const mongoose =  require('mongoose');
 
 const PickingPalletSchema = new mongoose.Schema ({
     productId:{type:Number, required:true},
-    locationId:{type:String, required:true},
+    locationId:{type:String, required:true,unique:true},
     Quantity:{type:Number},
 })
 
