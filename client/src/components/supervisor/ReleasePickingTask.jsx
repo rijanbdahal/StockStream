@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import Header from "../includes/Header.jsx";
-import "../../css/releasepickingtask.css"
+import '../../css/generalstylesheet.css';
 
 const ReleasePickingTask = () => {
     const [orderNumber, setOrderNumber] = useState('');

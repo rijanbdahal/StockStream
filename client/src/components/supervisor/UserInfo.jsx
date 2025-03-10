@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import '../../css/UserInfo.css';  // Importing scoped CSS file
+import "../../css/generalstylesheet.css";
 import Header from '../includes/Header.jsx';
 
 const UserInfo = () => {

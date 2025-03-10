@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../includes/Header.jsx";
-import '../../css/profile.css'; // Importing the CSS for styling
+import '../../css/generalstylesheet.css';
 
 const Profile = () => {
     const [userData, setUserData] = useState(null);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from "../../components/includes/Header.jsx";
 import axios from "axios";
-import "../../css/putaway.css";
+import "../../css/generalstylesheet.css";
 
 const PutAway = () => {
     const [palletID, setPalletID] = useState('');
@@ -62,7 +62,7 @@ const PutAway = () => {
     return (
         <div className="putaway-page">
             <Header />
-
+            {message && <p className={`message ${message.includes('Error') ? 'error' : 'success'}`}>{message}</p>}
             <form onSubmit={handlePalletSubmit} className="putaway-form-container">
                 <div className="putaway-form-group">
                     <label>Pallet ID</label>
@@ -73,6 +73,7 @@ const PutAway = () => {
                         required
                     />
                 </div>
+                <label></label>
                 <button type="submit" disabled={isLoading}>
                     {isLoading ? 'Loading...' : 'Get Location'}
                 </button>
@@ -81,7 +82,7 @@ const PutAway = () => {
             {assignedLocation && (
                 <div className="putaway-location-container">
                     <h3>Assigned Location</h3>
-                    <p>Location: {assignedLocation}</p>
+                    <p className="success" style={{ background: "#4496ff",color:"#ffffff" }}>Location: {assignedLocation}</p>
                     <form onSubmit={handleLocationVerify} className="putaway-form-container">
                         <div className="putaway-form-group">
                             <label>Location Check Digit</label>
@@ -92,6 +93,7 @@ const PutAway = () => {
                                 required
                             />
                         </div>
+                        <label></label>
                         <button type="submit" disabled={isLoading}>
                             {isLoading ? 'Verifying...' : 'Verify Location'}
                         </button>
@@ -99,7 +101,7 @@ const PutAway = () => {
                 </div>
             )}
 
-            {message && <p className={`putaway-message ${message.includes('Error') ? 'putaway-error' : 'putaway-success'}`}>{message}</p>}
+
         </div>
     );
 };

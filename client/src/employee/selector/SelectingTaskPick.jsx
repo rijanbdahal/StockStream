@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/includes/Header.jsx";
 
-const socket = io("http://localhost:5000"); // Adjust URL as needed
+
+const socket = io("http://localhost:5000");
 
 const SelectingTaskPick = () => {
+    const navigate = useNavigate();
     const locationState = useLocation();
     const [taskId] = useState(locationState.state?.taskId || "");
 
@@ -43,14 +45,41 @@ const SelectingTaskPick = () => {
             setError(message);
         });
 
+        socket.on("ShortProductSuccess", (message) => {
+            console.log("Ozzy")
+        });
+
+        socket.on("success", (message) => {
+            setSuccess(message);
+            socket.emit("getItem", taskId);
+        });
+
         socket.on("checkDigitError", (message) => {
             setError(message);
         });
 
-        socket.on("itemPicked", () => {
-            socket.emit("getItem", taskId); // Automatically request next item
+
+        socket.on("confirmShort", ({ message, requiredQuantity, availableQuantity, productId, taskId }) => {
+            const shortProductConfirm = window.confirm(
+                `${message}\n Required Quantity:${requiredQuantity} \n AvailableQuantity:${availableQuantity}`
+            );
+
+            if (shortProductConfirm) {
+                socket.emit("shortProductConfirm", { taskId, productId, availableQuantity });
+            } else {
+                alert("Please Enter Correct Quantity");
+                setError("Please Enter Correct Quantity");
+            }
         });
 
+        return () => {
+            socket.off("itemInfo");
+            socket.off("taskComplete");
+            socket.off("error");
+            socket.off("checkDigitError");
+            socket.off("itemPicked");
+            socket.off("confirmShort");
+        };
     }, [taskId]);
 
     const handleSubmit = (e) => {
@@ -59,17 +88,17 @@ const SelectingTaskPick = () => {
             productId,
             taskId,
             inputCheckDigit,
-            inputQuantity
+            inputQuantity,
         });
         console.log(inputCheckDigit);
     };
 
     return (
-        <div>
+        <div className="container">
             <Header />
             <div className="itemDetails">
                 {success ? (
-                    <h2>{success}</h2>
+                    <h2 className="success">{success}</h2>
                 ) : (
                     <>
                         <label>Location: {location}</label>
@@ -83,8 +112,8 @@ const SelectingTaskPick = () => {
             {error && <p className="error">{error}</p>}
 
             {!success && (
-                <div className="user-input">
-                    <form className="form-groups" onSubmit={handleSubmit}>
+                <div className="userInput">
+                    <form className="form-group" onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="inputCheckDigit">Check Digit:</label>
                             <input
@@ -105,7 +134,9 @@ const SelectingTaskPick = () => {
                                 required
                             />
                         </div>
-                        <button type="submit">Submit</button>
+                        <button className="submit-button" type="submit">
+                            Submit
+                        </button>
                     </form>
                 </div>
             )}

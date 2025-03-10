@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/login.css'; // Adjust the path if necessary
+import '../css/generalstylesheet.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -10,7 +10,7 @@ const Login = () => {
 
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
-        
+
     })
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

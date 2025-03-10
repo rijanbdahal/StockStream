@@ -1,7 +1,30 @@
-const PickingTask = require("../models/PickingTask");
-const Location = require("../models/Location");
-const PickingPallet = require("../models/PickingPallet");
-const Product = require("../models/Product");
+const PickingTask = require("../models/pickingTask");
+const Location = require("../models/location");
+const PickingPallet = require("../models/pickingPallet");
+const Product = require("../models/product");
+const StagingOrder = require("../models/stagingOrder");
+
+const proceedToNextItem = async (task, socket) => {
+    const nextItem = task.items.find(i => !i.pickedStatus);
+    if (nextItem) {
+        const nextProduct = await Product.findOne({ productID: nextItem.itemId });
+        const nextLocation = await PickingPallet.findOne({ productId: nextItem.itemId });
+
+        socket.emit("itemInfo", {
+            productId: nextItem.itemId,
+            pickedStatus: nextItem.pickedStatus,
+            quantityToPick: nextItem.quantity,
+            productName: nextProduct ? nextProduct.productName : "Unknown",
+            locationId: nextLocation ? nextLocation.locationId : "Unknown"
+        });
+    } else {
+        task.completedStatus = true;
+        await task.save();
+
+        socket.emit("taskComplete", "Task Completed");
+    }
+};
+
 
 const handleSocketConnection = (socket) => {
     console.log("New client connected");
@@ -9,6 +32,7 @@ const handleSocketConnection = (socket) => {
     // Handle fetching next item
     socket.on('getItem', async (taskId) => {
         try {
+
             const task = await PickingTask.findOne({ taskId:taskId });
             if (!task) return socket.emit("error", "Task not found");
 
@@ -17,6 +41,8 @@ const handleSocketConnection = (socket) => {
             if (!itemToPick) {
                 return socket.emit("taskComplete", "Task Completed");
             }
+            task.assignedStatus = true;
+            task.save();
 
             const product = await Product.findOne({ productID: itemToPick.itemId });
             const location = await PickingPallet.findOne({ productId: itemToPick.itemId });
@@ -34,7 +60,6 @@ const handleSocketConnection = (socket) => {
         }
     });
 
-    // Handle item verification
     socket.on('verifyUserInput', async ({ productId, taskId, inputCheckDigit, inputQuantity }) => {
         try {
             const task = await PickingTask.findOne({ taskId });
@@ -49,46 +74,91 @@ const handleSocketConnection = (socket) => {
             const item = task.items.find(i => i.itemId === productId);
             if (!item) return socket.emit("error", "Item not found");
 
-            console.log(inputCheckDigit);
-            console.log(location.checkDigit);
-
-            if (location.checkDigit !== inputCheckDigit) {
+            if (Number(location.checkDigit) !== Number(inputCheckDigit)) {
                 return socket.emit("checkDigitError", "Invalid Check ID");
             }
 
-            if (item.quantity !== inputQuantity) {
-                return socket.emit("confirmShort", "Is the product short?");
-            }
-
-            // Update picked status
-            pickingPallet.Quantity -= inputQuantity;
-            item.pickedStatus = true;
-            await pickingPallet.save();
-            await task.save();
-
-            socket.emit("itemPicked", "Item Picked");
-
-            // Fetch next item automatically
-            const nextItem = task.items.find(i => !i.pickedStatus);
-            if (nextItem) {
-                const nextProduct = await Product.findOne({ productID: nextItem.itemId });
-                const nextLocation = await PickingPallet.findOne({ productId: nextItem.itemId });
-
-                socket.emit("itemInfo", {
-                    productId: nextItem.itemId,
-                    pickedStatus: nextItem.pickedStatus,
-                    quantityToPick: nextItem.quantity,
-                    productName: nextProduct ? nextProduct.productName : "Unknown",
-                    locationId: nextLocation ? nextLocation.locationId : "Unknown"
+            if (inputQuantity < item.quantity) {
+                // Emit a confirmation request to the frontend
+                return socket.emit("confirmShort", {
+                    message: "Product is short, do you confirm?",
+                    requiredQuantity: item.quantity,
+                    availableQuantity: inputQuantity,
+                    productId,
+                    taskId
                 });
-            } else {
-                socket.emit("taskComplete", "Task Completed");
             }
+            else if(inputQuantity > item.quantity){
+                return socket.emit("error", "Invalid Quantity");
+            }
+
+            // Normal picking process
+            pickingPallet.Quantity -= inputQuantity;
+            await pickingPallet.save();
+            item.pickedStatus = true;
+            item.quantity = inputQuantity; // Store picked quantity
+            await task.save();
+            await proceedToNextItem(task, socket);
+            socket.emit("success", "Item Picked");
+
 
         } catch (err) {
             socket.emit("error", "Server Error");
         }
     });
+
+
+    socket.on('shortProductConfirm', async ({ taskId, productId, availableQuantity }) => {
+        try {
+
+            const task = await PickingTask.findOne({ taskId });
+            if (!task) return socket.emit("error", "Task not found");
+
+            const item = task.items.find(i => i.itemId === productId);
+            if (!item) return socket.emit("error", "Item not found");
+
+            const remainingQuantity = item.quantity - availableQuantity;
+            item.quantity = availableQuantity;
+            console.log('RemainingQuantity', remainingQuantity);
+            item.pickedStatus = true;
+            socket.emit("success", "Item Picked");
+            item.quantity = availableQuantity;
+            task.save();
+
+
+            if (remainingQuantity > 0) {
+                const newTask = new PickingTask({
+                    orderNumber:task.orderNumber,
+                    storeNumber:task.storeNumber,
+                    totalCases: remainingQuantity,
+                    totalStop:1,
+                    placedAt:task.placedAt,
+                    toBeFulfilledBy:task.toBeFulfilledBy,
+                    completedStatus:false,
+                    assignedStatus:false,
+                    totalPallets:1,
+                    urgent: task.urgent,
+                    items: [
+                        {   itemId: productId,
+                            quantity: remainingQuantity,
+                            pickedStatus: false
+                        }
+                        ],
+                });
+                 newTask.save();
+
+            }
+            await proceedToNextItem(task, socket);
+            socket.emit("success", "Item Picked");
+            socket.emit("ShortProductSuccess", "Short quantity recorded, moving to next item.");
+
+
+        } catch (err) {
+            socket.emit("error", "Server Error");
+        }
+    });
+
+
 };
 
 module.exports = { handleSocketConnection };

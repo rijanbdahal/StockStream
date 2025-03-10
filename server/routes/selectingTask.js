@@ -28,26 +28,6 @@ router.get("/details", async (req, res) => {
     }
 });
 
-router.post("/:taskId",async (req, res) => {
-    const {taskId} = req.params;
 
-    try{
-        const selectingTask = await PickingOrder.findOne({orderNumber:taskId});
-        if (!selectingTask) {
-            return res.status(400).json({ error: "Task Not Found" });
-        }
-        else{
-            selectingTask.assignedStatus = true;
-            await selectingTask.save();
-        }
-    }
-    catch(err){
-        console.error(err);
-    }
-});
-
-router.post("/pickingproductdetails",async (req, res) => {
-
-})
 
 module.exports = router;

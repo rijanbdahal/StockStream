@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../includes/Header.jsx";
-import "../../css/dockingentry.css";
+import '../../css/generalstylesheet.css';
 
 const DockingEntry = () => {
     const [manufacturer, setManufacturer] = useState([]);
@@ -93,8 +93,6 @@ const DockingEntry = () => {
                 arrivalTime: arrivalTime // Add arrivalTime explicitly
             })
                 .then((response) => {
-                    console.log("Docking entry added successfully:", response.data);
-                    setSuccess("Docking entry added successfully.");
                     setDockingEntry({
                         consignmentID: null,
                         manufacturerID: null,
@@ -102,6 +100,7 @@ const DockingEntry = () => {
                         totalPallets: null,
                         doorNo: null,
                     });
+                    setSuccess("Docking entry added successfully.");
                 })
                 .catch((error) => {
                     console.error("Error submitting docking entry:", error);
@@ -136,11 +135,12 @@ const DockingEntry = () => {
         <div>
             <Header />
             <div className="docking-entry">
-            <h2>Docking Entry Form</h2>
+
             {error && <p style={{ color: "red" }}>{error}</p>}
             {success && <p style={{ color: "green" }}>{success}</p>}
 
             <form onSubmit={handleSubmit}>
+                <h2>Docking Entry Form</h2>
                 <div className="form-group">
                     <label htmlFor="consignmentID">Consignment ID</label>
                     <input

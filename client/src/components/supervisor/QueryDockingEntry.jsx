@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Header from "../includes/Header.jsx";
-import "../../css/dockingentryquery.css"; // Import the CSS file
+import '../../css/generalstylesheet.css';
 
 const QueryDockingEntry = () => {
     const [error, setError] = useState('');
@@ -40,12 +40,13 @@ const QueryDockingEntry = () => {
     return (
         <div className="docking-entry-query">
             <Header />
-            <h2>Docking Entry</h2>
+
 
             {error && <p className="message error">{error}</p>}
             {success && <p className="message success">{success}</p>}
 
             <form onSubmit={handleSubmit}>
+                <h2>Docking Entry Inquiry</h2>
                 <div className="form-group">
                     <label htmlFor="consignmentID">Consignment ID</label>
                     <input
@@ -57,6 +58,7 @@ const QueryDockingEntry = () => {
                         placeholder="Enter Consignment ID"
                         onChange={(e) => setConsignmentID(e.target.value)}
                     />
+                    <label></label>
                     <button type="submit">Submit</button>
                 </div>
             </form>

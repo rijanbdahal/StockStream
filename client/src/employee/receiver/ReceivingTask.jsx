@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from "../../components/includes/Header.jsx";
 import axios from "axios";
-import '../../css/receivingtask.css'; // Assuming you saved the CSS in ReceivingTask.css
+import "../../css/generalstylesheet.css";
 
 const ReceivingTask = () => {
     const [consignmentID, setConsignmentID] = useState('');
@@ -64,6 +64,8 @@ const ReceivingTask = () => {
             <Header />
             <form onSubmit={handleSubmit} className="receiving-task-form-container">
                 <h2>Receiving Task</h2>
+                {error && <p className="error">{error}</p>}
+                {success && <p className="success">{success}</p>}
                 <div className="receiving-task-form-group">
                     <label>Consignment ID</label>
                     <input
@@ -136,8 +138,7 @@ const ReceivingTask = () => {
                         required
                     />
                 </div>
-                {error && <p className="receiving-task-error">{error}</p>}
-                {success && <p className="receiving-task-success">{success}</p>}
+
                 <button
                     type="submit"
                     disabled={loading}

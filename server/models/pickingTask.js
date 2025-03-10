@@ -3,7 +3,7 @@ const Counter = require("./counter");
 
 const PickingTaskSchema = new mongoose.Schema({
     taskId: { type: Number, unique: true },
-    orderNumber: { type: Number, required: true, unique: true },
+    orderNumber: { type: Number, required: true },
     storeNumber: { type: Number, required: true },
     totalCases: { type: Number, required: true },
     totalStop: { type: Number, required: true },

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // For redirection
 import axios from 'axios';
-import '../css/dashboard.css'; // Import CSS file
+import '../css/generalstylesheet.css'; // Import CSS file
 import Header from './includes/Header.jsx';
 
 const Dashboard = () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../includes/Header.jsx";
 import axios from "axios";
-import '../../css/inquirylocation.css'
+import '../../css/generalstylesheet.css';
 
 const InquiryLocation = () => {
     const [aisle, setAisle] = useState('');
@@ -65,8 +65,10 @@ const InquiryLocation = () => {
     return (
         <div className="inquiry-location">
             <Header />
-            <h2>Inquiry Location</h2>
+
             <form onSubmit={handleSubmit}>
+                <h2>Inquiry Location</h2>
+                {error && <p className="error">{error}</p>}
                 <div>
                     <label>Aisle:</label>
                     <input type="text" value={aisle} onChange={(e) => setAisle(e.target.value)} required />
@@ -79,18 +81,20 @@ const InquiryLocation = () => {
                     <label>Row Number:</label>
                     <input type="number" value={rowNumber} onChange={(e) => setRowNumber(e.target.value)} required />
                 </div>
+                <label></label>
                 <div>
+
                     <button type="submit" disabled={loading}>
                         {loading ? 'Checking...' : 'Inquire'}
                     </button>
                 </div>
             </form>
 
-            {error && <p>{error}</p>}
+
             {loading && <p>Loading...</p>}
             {available !== null && (
-                <div>
-                    <p>The location is {available ? "available" : "not available"}.</p>
+                <div className={available?"success":"error"}>
+                    <p className={available?"success":"error"}>The location is {available ? "available" : "not available"}.</p>
                     <button onClick={handleToggleStatus}>
                         {available ? "Mark as Unavailable" : "Mark as Available"}
                     </button>

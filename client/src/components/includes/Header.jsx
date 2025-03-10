@@ -1,11 +1,14 @@
 import React from 'react';
 import logo from './logo/logo.jpg'; // Correct relative path
-import '../../css/header.css';
+import '../../css/generalstylesheet.css';
+
 const Header = () => {
     return (
         <header>
-            <div className="header">
-                <img src={logo} alt="Dashboard" />
+            <div className="logo-container">
+                <img src={logo} alt="Dashboard" className="logo" />
+            </div>
+            <nav>
                 <ul>
                     <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="/home">Home</a></li>
@@ -15,9 +18,8 @@ const Header = () => {
                     <li><a href="/dockingentry">Docking</a></li>
                     <li><a href="/receivingtask">Receiving</a></li>
                     <li><a href="/putaway">Putaway</a></li>
-
                 </ul>
-            </div>
+            </nav>
         </header>
     );
 };
