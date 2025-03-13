@@ -12,7 +12,7 @@ router.get("/details", async (req, res) => {
         const selectingTask = await PickingTask.findOne({ completedStatus: false, assignedStatus: false }).sort({ toBeFulfilledBy: 1 });
 
         if (!selectingTask) {
-            return res.status(200).json({ error: "No Task Available!" });
+            return res.status(404).json({ error: "No Task Available!" });
         }
 
         res.json({

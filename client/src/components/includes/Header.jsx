@@ -18,6 +18,11 @@ const Header = () => {
                     <li><a href="/dockingentry">Docking</a></li>
                     <li><a href="/receivingtask">Receiving</a></li>
                     <li><a href="/putaway">Putaway</a></li>
+                    <li><a href="/replenishtask">Replenish</a></li>
+                    <li><a href="/selectingtaskdetails">Selection</a></li>
+                    <li><a href="/assignsingleproductlocation">Assign Product Location</a></li>
+                    <li><a href="/releasepickingtask">Release Picking Task</a></li>
+
                 </ul>
             </nav>
         </header>

@@ -18,6 +18,7 @@ const selectingTask = require("./routes/selectingTask.js");
 const assignProductLocation = require("./routes/assignProductLocation.js");
 const replenishTask = require("./routes/replenishTaskAuth.js");
 const releasePickingTask = require("./routes/releasePickingTask.js");
+const stageOrder = require("./routes/stageOrderAuth.js");
 const { handleSocketConnection } = require("./middlewares/socketUtils");
 
 dotenv.config(); // ✅ Load .env before using process.env
@@ -36,7 +37,7 @@ app.use(express.json());
 
 const io = new Server(server, { cors: corsOptions });
 
-// ✅ MongoDB Connection Handling
+
 const MONGO_URI = process.env.MONGO_URI;
 if (!MONGO_URI) {
     console.error("❌ MONGO_URI is not defined in .env file!");
@@ -51,12 +52,9 @@ mongoose
         process.exit(1);
     });
 
-// ✅ Handle Socket Connections & Disconnections
 io.on("connection", (socket) => {
     console.log(" New client connected:", socket.id);
-
     handleSocketConnection(socket);
-
     socket.on("disconnect", () => {
         console.log("Client disconnected:", socket.id);
     });
@@ -76,6 +74,7 @@ app.use("/selectingtask", selectingTask);
 app.use("/assignproductlocation", assignProductLocation);
 app.use("/replenishtask", replenishTask);
 app.use("/releasepickingtask", releasePickingTask);
+app.use("/stageOrder", stageOrder);
 
 app.all("*", (req, res) => {
     res.status(404).send("Route not found");

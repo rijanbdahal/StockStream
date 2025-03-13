@@ -51,9 +51,9 @@ const AssignSingleProductLocation = () => {
     return (
         <div className="container">
             <Header />
-            <h1 className="title">Assign Location for Product</h1>
 
             <form onSubmit={handleSubmit} className="form">
+                <h1 style={{color:"black"}}>Assign Location for Product</h1>
                 <div className="form-group">
                     <label htmlFor="productId">Product:</label>
                     <select

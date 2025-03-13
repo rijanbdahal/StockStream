@@ -20,7 +20,6 @@ const proceedToNextItem = async (task, socket) => {
     } else {
         task.completedStatus = true;
         await task.save();
-
         socket.emit("taskComplete", "Task Completed");
     }
 };
@@ -92,14 +91,29 @@ const handleSocketConnection = (socket) => {
                 return socket.emit("error", "Invalid Quantity");
             }
 
-            // Normal picking process
+
             pickingPallet.Quantity -= inputQuantity;
             await pickingPallet.save();
             item.pickedStatus = true;
-            item.quantity = inputQuantity; // Store picked quantity
+            item.quantity = inputQuantity;
             await task.save();
             await proceedToNextItem(task, socket);
+
+
+            try{
+            const stagingOrder = new StagingOrder({
+                shippingId:taskId,
+                totalPallets:task.totalPallets,
+                status:false,
+                locationId: task.stagingLocationId,
+            });
+
+            stagingOrder.save();}
+            catch(err){
+                return socket.emit("error", "Server Error");
+            }
             socket.emit("success", "Item Picked");
+
 
 
         } catch (err) {
@@ -138,6 +152,7 @@ const handleSocketConnection = (socket) => {
                     assignedStatus:false,
                     totalPallets:1,
                     urgent: task.urgent,
+                    stagingLocationId:task.stagingLocationId,
                     items: [
                         {   itemId: productId,
                             quantity: remainingQuantity,

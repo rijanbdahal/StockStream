@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const loadingOrderSchema = new mongoose.Schema(
     {
         loadingId: { type: Number, required: true},
-        userId: { type: Number, required: true },
         pallets:[
             {
                 shippingId:{

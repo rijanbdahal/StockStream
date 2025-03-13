@@ -41,13 +41,13 @@ router.post("/", async (req, res) => {
         // Check if the consignment exists
         const consignment = await Docking.findOne({ consignmentID });
         if (!consignment) {
-            return res.status(400).json({ msg: "No consignment ID found" });
+            return res.status(400).json({ error: "Consignment ID Invalid" });
         }
 
         // Check if the product exists
         const product = await Product.findOne({ productID });
         if (!product) {
-            return res.status(400).json({ msg: "No product found with provided ID" });
+            return res.status(400).json({ error: "No product found with provided ID" });
         }
 
         // Assign a storage location

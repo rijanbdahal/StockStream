@@ -18,6 +18,7 @@ import AssignSingleProductLocation from "./components/supervisor/AssignSinglePro
 import ReplenishTask from "./employee/forks/ReplenishTask.jsx";
 import ReleasePickingTask from "./components/supervisor/ReleasePickingTask.jsx";
 import SelectingTaskPick from "./employee/selector/SelectingTaskPick.jsx";
+import StageOrder from "./employee/selector/StageOrder.jsx";
 
 const App = () => {
     return (
@@ -41,7 +42,7 @@ const App = () => {
                 <Route path="/replenishtask" element={<ReplenishTask/>}/>
                 <Route path="/releasepickingtask" element={<ReleasePickingTask/>}/>
                 <Route path="/selectingtaskpick" element={<SelectingTaskPick/>}/>
-
+                <Route path="/stageorder" element={<StageOrder/>}/>
                 <Route path="/" element={<HomePage />} />
 
 

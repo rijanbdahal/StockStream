@@ -39,6 +39,7 @@ const SelectingTaskPick = () => {
             setProductName("");
             setLocation("");
             setQuantityToPick(null);
+            navigate('/stageorder', { state: { taskId } });
         });
 
         socket.on("error", (message) => {

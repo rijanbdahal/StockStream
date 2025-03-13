@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../../components/includes/Header.jsx";
 import "../../css/generalstylesheet.css";
+
 const SelectingTaskDetails = () => {
     const navigate = useNavigate();
     const [taskId, setTaskId] = useState(null);
@@ -25,8 +26,11 @@ const SelectingTaskDetails = () => {
                 setLoading(false);
             })
             .catch(error => {
-                console.error("Error fetching task details:", error);
-                setError('Failed to fetch data. Please try again.');
+                if (error.response && error.response.data.error) {
+                    setError(error.response.data.error); // Display error from the backend
+                } else {
+                    setError("Failed to fetch data. Please try again.");
+                }
                 setLoading(false);
             });
     }, []);
@@ -66,6 +70,6 @@ const SelectingTaskDetails = () => {
             </section>
         </div>
     );
-}
+};
 
 export default SelectingTaskDetails;

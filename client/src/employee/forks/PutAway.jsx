@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from "../../components/includes/Header.jsx";
 import axios from "axios";
 import "../../css/generalstylesheet.css";
+import QRScanner from "../../QRCodeReader.js";
 
 const PutAway = () => {
     const [palletID, setPalletID] = useState('');
@@ -9,6 +10,12 @@ const PutAway = () => {
     const [locationCheckDigit, setLocationCheckDigit] = useState(null);
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false); // Optional loading state
+    const [scanning, setScanning] = useState(false);
+
+    const handleScan = (scannedData) => {
+        setPalletID(scannedData);
+        setScanning(false);
+    }
 
     const handlePalletSubmit = async (e) => {
         e.preventDefault();
@@ -64,6 +71,7 @@ const PutAway = () => {
             <Header />
             {message && <p className={`message ${message.includes('Error') ? 'error' : 'success'}`}>{message}</p>}
             <form onSubmit={handlePalletSubmit} className="putaway-form-container">
+                <h1 style={{color:"black"}}>Putaway</h1>
                 <div className="putaway-form-group">
                     <label>Pallet ID</label>
                     <input
@@ -72,6 +80,18 @@ const PutAway = () => {
                         onChange={(e) => setPalletID(e.target.value)}
                         required
                     />
+                    <br/>
+                    <br/>
+                    {!scanning ? (
+                        <button
+                        type="button"
+                        onClick={()=>setScanning(true)}
+                        className="receiving-task-submit-btn scan-btn">
+                            Scan Pallet
+                        </button>
+                    ):(
+                        <QRScanner onScan={handleScan} onClose={()=>setScanning(false)} />
+                        )}
                 </div>
                 <label></label>
                 <button type="submit" disabled={isLoading}>
