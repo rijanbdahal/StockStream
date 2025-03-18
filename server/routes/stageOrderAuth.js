@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const StagingOrder = require('../models/StagingOrder');
-const StagingLocation = require('../models/StagingLocation');
-const PickingTask = require('../models/PickingTask');
+const StagingOrder = require('../models/stagingOrder');
+const StagingLocation = require('../models/stagingLocation');
+const PickingTask = require('../models/pickingTask');
 
 // Route to fetch staging order by taskId
 router.get("/:taskId", async (req, res) => {

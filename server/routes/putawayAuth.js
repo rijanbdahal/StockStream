@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Pallet = require("../models/Pallet");
-const Location = require("../models/Location");
+const Pallet = require("../models/pallet");
+const Location = require("../models/location");
 
 router.get("/:palletID", async (req, res) => {
     const { palletID } = req.params;

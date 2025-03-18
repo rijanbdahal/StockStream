@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Docking = require("../models/Docking");
+const Docking = require("../models/docking");
 
 router.get("/:consignmentID", async (req, res) => {
     const consignmentID = Number(req.params.consignmentID);

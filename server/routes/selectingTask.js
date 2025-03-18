@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const PickingOrder = require("../models/pickingTask");
-const Product = require("../models/Product");
-const PickingPallet = require("../models/PickingPallet");
+const Product = require("../models/product");
+const PickingPallet = require("../models/pickingPallet");
 const PickingTask = require("../models/pickingTask");
 
 

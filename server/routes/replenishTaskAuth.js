@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const PickingPallet = require("../models/PickingPallet");
-const Location = require("../models/Location");
-const Product = require("../models/Product");
-const Pallet = require("../models/Pallet");
+const PickingPallet = require("../models/pickingPallet");
+const Location = require("../models/location");
+const Product = require("../models/product");
+const Pallet = require("../models/pallet");
 const PalletInfo = require("../models/palletInfo");
 
 router.get("/gettask", async (req, res) => {

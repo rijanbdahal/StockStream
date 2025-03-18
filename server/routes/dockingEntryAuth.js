@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Manufacturer = require('../models/Manufacturer');
-const Product = require('../models/Product');
-const Docking = require('../models/Docking');
+const Manufacturer = require('../models/manufacturer');
+const Product = require('../models/product');
+const Docking = require('../models/docking');
 
 // Fetch manufacturers
 router.get('/manufacturer', async (req, res) => {
