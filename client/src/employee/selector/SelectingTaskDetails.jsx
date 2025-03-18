@@ -14,6 +14,45 @@ const SelectingTaskDetails = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    const [user, setUser] = useState(null);
+    const [userRole, setUserRole] = useState("");
+
+    useEffect(() => {
+        const authToken = localStorage.getItem("authToken");
+
+        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+            },
+            withCredentials: true,
+        })
+            .then(response => {
+                setUser(response.data.user);
+
+                console.log(response.data.user);
+            })
+            .catch(error => {
+                console.error("Authentication failed:", error);
+                navigate("/login");
+            });
+    }, [navigate]);
+
+    useEffect(() => {
+        if (user && user.userRole) {
+            setUserRole(user.userRole);
+            console.log("User Role:", user.userRole);
+            console.log("user",user);
+
+            if (user.userRole !== "Selector") {
+                if(user.userRole === "Admin") {
+                    return;
+                }
+                navigate("/dashboard");
+            }
+        }
+    }, [user, navigate]);
+
+
     useEffect(() => {
         axios.get('http://localhost:5000/selectingtask/details')
             .then(response => {
@@ -46,6 +85,7 @@ const SelectingTaskDetails = () => {
     return (
         <div className="selecting-task-container">
             <Header />
+            <form className="putaway-form-container">
             <section className="task-details">
                 {loading ? (
                     <div className="loading-container">
@@ -68,6 +108,7 @@ const SelectingTaskDetails = () => {
                     </>
                 )}
             </section>
+            </form>
         </div>
     );
 };

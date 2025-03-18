@@ -108,6 +108,7 @@ const Registration = () => {
                         <option value="Receiver">Receiver</option>
                         <option value="RTO">RTO</option>
                         <option value="Loader">Loader</option>
+                        <option value="Docker">Loader</option>
                     </select>
                 </div>
 
@@ -125,7 +126,7 @@ const Registration = () => {
                 <button type="submit">Register</button>
             </form>
 
-            <p>Already signed up? <a href="/Login">Login</a></p>
+            <p>Already signed up? <a  style={{color:"blue"}} href="/Login">Login</a></p>
         </div>
     );
 };

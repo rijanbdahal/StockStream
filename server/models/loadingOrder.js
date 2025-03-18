@@ -3,17 +3,17 @@ const mongoose = require('mongoose');
 const loadingOrderSchema = new mongoose.Schema(
     {
         loadingId: { type: Number, required: true},
-        pallets:[
+        pallets: [
             {
-                shippingId:{
-                    type: Number,
-                    required: true
-                }
+                palletId: { type: Number, required: true },
+                shipped: { type: Boolean, default: false }
             }
         ],
-        isCompleted:{type: Boolean, default: false},
+        isShipped:{type: Boolean, default: false},
         truckNumber:{type:Number, required: true},
-        completedAt:{type:Date, required: true}
+        completedAt:{type:Date},
+        totalPallets:{type:Number, required: true},
+        stagingLane:{type:String, required: true}
     }
 )
 

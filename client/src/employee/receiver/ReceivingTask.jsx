@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/includes/Header.jsx";
 import axios from "axios";
 import "../../css/generalstylesheet.css";
 import QRScanner from "../../QRCodeReader.js";
+import {useNavigate} from "react-router-dom";
 
 const ReceivingTask = () => {
     const [consignmentID, setConsignmentID] = useState("");
@@ -17,11 +18,71 @@ const ReceivingTask = () => {
     const [success, setSuccess] = useState("");
     const [loading, setLoading] = useState(false);
     const [scanning, setScanning] = useState(false);
+    const [products, setProducts] = useState([]);
+
+
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+    const [userRole, setUserRole] = useState("");
+
+    useEffect(() => {
+        const authToken = localStorage.getItem("authToken");
+
+        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+            },
+            withCredentials: true,
+        })
+            .then(response => {
+                setUser(response.data.user);
+
+                console.log(response.data.user);
+            })
+            .catch(error => {
+                console.error("Authentication failed:", error);
+                navigate("/login");
+            });
+    }, [navigate]);
+
+    useEffect(() => {
+        if (user && user.userRole) {
+            setUserRole(user.userRole);
+            console.log("User Role:", user.userRole);
+            console.log("user",user);
+
+            if (user.userRole !== "Receiver") {
+                if(user.userRole === "Admin") {
+                    return;
+                }
+                navigate("/dashboard");
+            }
+        }
+    }, [user, navigate]);
+
 
     const handleScan = (scannedData) => {
         setPalletID(scannedData); // Auto-fill the pallet ID field
         setScanning(false); // Stop scanning after successful scan
     };
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            if (!consignmentID) return; // Prevent API call if no consignment ID
+
+            try {
+                const response = await axios.get(`http://localhost:5000/receivingTaskAuth/products/${consignmentID}`);
+                console.log(response);
+                setProducts(response.data.products || []); // Ensure data consistency
+                setError("");
+            } catch (error) {
+                setError("Loading products.");
+                setProducts([]);
+            }
+        };
+
+        fetchProducts();
+    }, [consignmentID]); // Fetch when consignment ID changes
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -61,11 +122,7 @@ const ReceivingTask = () => {
             setExpiryDate("");
         } catch (error) {
             setLoading(false);
-            if (error.response) {
-                setError(error.response.data.error);
-            } else {
-                setError("An unexpected error occurred. Please try again.");
-            }
+            setError(error.response?.data?.error || "An unexpected error occurred. Please try again.");
         }
     };
 
@@ -82,23 +139,26 @@ const ReceivingTask = () => {
                     <input type="number" value={consignmentID} onChange={(e) => setConsignmentID(e.target.value)} required />
                 </div>
 
-                <div className="receiving-task-form-group">
-                    <label>Product ID</label>
-                    <input type="number" value={productID} onChange={(e) => setProductID(e.target.value)} required />
+                <div className="form-group">
+                    <label htmlFor="productID">Select Product</label>
+                    <select id="productID" value={productID} onChange={(e) => setProductID(e.target.value)} required>
+                        <option value="">Select Product</option>
+                        {products.map((product) => (
+                            <option key={product.productID} value={product.productID}>
+                                {product.productName} (ID: {product.productID})
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 <div className="receiving-task-form-group">
                     <label>Pallet ID</label>
                     <input type="number" value={palletID} onChange={(e) => setPalletID(e.target.value)} required />
                     <br />
-                    <br/>
+                    <br />
 
                     {!scanning ? (
-                        <button
-                            type="button"
-                            onClick={() => setScanning(true)}
-                            className="receiving-task-submit-btn scan-btn"
-                        >
+                        <button type="button" onClick={() => setScanning(true)} className="receiving-task-submit-btn scan-btn">
                             Scan QR Code
                         </button>
                     ) : (

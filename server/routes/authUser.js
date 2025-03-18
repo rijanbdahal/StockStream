@@ -7,4 +7,5 @@ router.get('/api/auth/user', authenticateUser,(req, res) => {
 
 });
 
+
 module.exports = router;

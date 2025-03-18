@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../../components/includes/Header.jsx";
 import "../../css/generalstylesheet.css";
+import QRScanner from "../../QRCodeReader.js";
+import {useNavigate} from "react-router-dom";
 
 const ReplenishTask = () => {
     const [fromLocationId, setFromLocationId] = useState("");
@@ -12,8 +14,53 @@ const ReplenishTask = () => {
     const [successMessage, setSuccessMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
     const [taskUpdated, setTaskUpdated] = useState(false); // State to trigger re-fetch
+    const [scanning, setScanning] = useState(false);
 
-    // Function to refetch task data
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+    const [userRole, setUserRole] = useState("");
+
+    useEffect(() => {
+        const authToken = localStorage.getItem("authToken");
+
+        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+            },
+            withCredentials: true,
+        })
+            .then(response => {
+                setUser(response.data.user);
+
+                console.log(response.data.user);
+            })
+            .catch(error => {
+                console.error("Authentication failed:", error);
+                navigate("/login");
+            });
+    }, [navigate]);
+
+    useEffect(() => {
+        if (user && user.userRole) {
+            setUserRole(user.userRole);
+            console.log("User Role:", user.userRole);
+            console.log("user",user);
+
+            if (user.userRole !== "RTO") {
+                if(user.userRole === "Admin") {
+                    return;
+                }
+                navigate("/dashboard");
+            }
+        }
+    }, [user, navigate]);
+
+
+    const handleScan = (scannedData) => {
+        setPalletId(Number(scannedData));
+        setScanning(false);
+    }
+
     const fetchTaskData = () => {
         setSuccessMessage("");
         setErrorMessage("");
@@ -58,7 +105,7 @@ const ReplenishTask = () => {
             setSuccessMessage("Pallet ID verified successfully.");
         } catch (error) {
             console.error("Error verifying pallet ID:", error);
-            setErrorMessage(error.response?.data?.error || "Error verifying pallet ID");
+            setErrorMessage( "Error verifying pallet ID");
         }
     };
 
@@ -85,7 +132,7 @@ const ReplenishTask = () => {
             setTaskUpdated((prevState) => !prevState); // Toggle the state to trigger re-fetch
         } catch (error) {
             console.error("Error verifying check digit:", error);
-            setErrorMessage(error.response?.data?.error || "Verification failed");
+            setErrorMessage( "Verification failed");
         }
     };
 
@@ -129,8 +176,20 @@ const ReplenishTask = () => {
                         required
                     />
 
+                    <br/>
+                    <br/>
+                    {!scanning?(
+                        <button type="button" onClick={() =>setScanning(true)} className="receiving-task-submit-btn scan-btn">
+                            Scan Pallet ID
+                        </button>
+                    ):(
+                        <QRScanner onScan={handleScan} onClose={() => setScanning(false)} />
+                    )}
+
+
 
                 </div>
+                <br/>
                 <button onClick={verifyPalletId}>Check</button>
 
                 <p><strong>To Location:</strong> {toLocationId}</p>
@@ -144,6 +203,8 @@ const ReplenishTask = () => {
                         onChange={(e) => setCheckDigit(e.target.value)}
                         required
                     />
+                    <br/>
+                    <br/>
 
                     <button onClick={verifyCheckDigit}>Verify</button>
                 </div>

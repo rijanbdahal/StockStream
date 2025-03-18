@@ -56,7 +56,8 @@ const Login = () => {
                 </div>
                 <button type="submit">Login</button>
             </form>
-            <p>Don't have an account? <a href="/Registration">Sign Up</a></p>
+            <p>Don't have an account? <a style={{color:"blue"}} href="/Registration">Sign Up</a></p>
+
         </div>
     );
 };

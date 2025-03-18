@@ -47,7 +47,7 @@ const QRScanner = ({ onScan, onClose }) => {
 
                 if (code) {
                     onScan(code.data);
-                    onClose(); // Close scanner
+                    onClose();
                 }
             }
             animationFrameId = requestAnimationFrame(scanQRCode);

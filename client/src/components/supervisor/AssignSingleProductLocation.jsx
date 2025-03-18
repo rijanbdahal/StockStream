@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../includes/Header.jsx";
 import '../../css/generalstylesheet.css';
+import {useNavigate} from "react-router-dom";
 
 const AssignSingleProductLocation = () => {
     const [productId, setProductId] = useState("");
@@ -9,9 +10,44 @@ const AssignSingleProductLocation = () => {
     const [message, setMessage] = useState({ text: "", type: "" });
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [user, setUser] = useState(null);
+    const [userRole, setUserRole] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
-        setMessage({ text: "", type: "" }); // Reset message on mount
+        const authToken = localStorage.getItem("authToken");
+
+        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+            },
+            withCredentials: true,
+        })
+            .then(response => {
+                setUser(response.data.user);
+
+                console.log(response.data.user);
+            })
+            .catch(error => {
+                console.error("Authentication failed:", error);
+                navigate("/login");
+            });
+    }, [navigate]);
+
+    useEffect(() => {
+        if (user && user.userRole) {
+            setUserRole(user.userRole);
+            if (user.userRole !== "Supervisor" ) {
+                if(user.userRole === "Admin") {
+                   return;
+                }
+                navigate("/dashboard");
+            }
+        }
+    }, [user, navigate]);
+
+    useEffect(() => {
+        setMessage({ text: "", type: "" });
         axios
             .get("http://localhost:5000/assignproductlocation/products")
             .then((response) => {

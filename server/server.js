@@ -19,6 +19,10 @@ const assignProductLocation = require("./routes/assignProductLocation.js");
 const replenishTask = require("./routes/replenishTaskAuth.js");
 const releasePickingTask = require("./routes/releasePickingTask.js");
 const stageOrder = require("./routes/stageOrderAuth.js");
+const printLabelAuth = require("./routes/printLabelAuth.js");
+const loadingTaskAuth = require("./routes/loadingTaskAuth.js");
+const loadingtask = require("./routes/loadingTask");
+const releaseLoadingTask = require("./routes/releaseLoadingTask.js");
 const { handleSocketConnection } = require("./middlewares/socketUtils");
 
 dotenv.config(); // ✅ Load .env before using process.env
@@ -75,7 +79,10 @@ app.use("/assignproductlocation", assignProductLocation);
 app.use("/replenishtask", replenishTask);
 app.use("/releasepickingtask", releasePickingTask);
 app.use("/stageOrder", stageOrder);
-
+app.use("/printLabelAuth",printLabelAuth);
+app.use("/loadingTaskAuth", loadingTaskAuth);
+app.use("/releaseloadingtask",releaseLoadingTask);
+app.use("/loadingtask", loadingtask);
 app.all("*", (req, res) => {
     res.status(404).send("Route not found");
 });
@@ -83,5 +90,5 @@ app.all("*", (req, res) => {
 // ✅ Start the Server
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(` Server running on port ${PORT}`);
 });

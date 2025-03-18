@@ -38,13 +38,13 @@ router.post("/", async (req, res) => {
             return res.status(400).json({ error: "Missing Fields. Please check your data." });
         }
 
-        // Check if the consignment exists
+
         const consignment = await Docking.findOne({ consignmentID });
         if (!consignment) {
             return res.status(400).json({ error: "Consignment ID Invalid" });
         }
 
-        // Check if the product exists
+
         const product = await Product.findOne({ productID });
         if (!product) {
             return res.status(400).json({ error: "No product found with provided ID" });
@@ -77,6 +77,28 @@ router.post("/", async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: err.message || "Server error. Please try again later." });
+    }
+});
+
+router.get("/products/:consignmentId", async (req, res) => {
+    try {
+
+        const { consignmentId } = req.params;
+        console.log(consignmentId);
+
+        // Corrected the query to match the actual field name
+        const docking = await Docking.findOne({ consignmentID: consignmentId });
+
+        if (!docking) {
+            return res.status(404).json({ error: "No docking entry found for this consignment ID" });
+        }
+
+        const products = await Product.find({productID: docking.products});
+
+        res.status(200).json({ products });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message || "Server error" });
     }
 });
 

@@ -6,16 +6,16 @@ import '../../css/generalstylesheet.css';
 
 const Profile = () => {
     const [userData, setUserData] = useState(null);
+    const [userRole, setUserRole] = useState(null);
     const [loading, setLoading] = useState(true); // Set loading to true initially
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
+
     useEffect(() => {
-        // Retrieve the token from local storage
+
         const authToken = localStorage.getItem('authToken');
 
-
-        // Send the token in the Authorization header
         axios.get('http://localhost:5000/authRoutes/api/auth/user', {
             headers: {
                 Authorization: `Bearer ${authToken}`,
@@ -23,14 +23,15 @@ const Profile = () => {
             withCredentials: true,
         })
             .then(response => {
-                setUserData(response.data.user); // Save user data in state
+                setUserData(response.data.user);
                 setLoading(false);  // Stop loading
             })
             .catch(error => {
-                setError('Failed to load user data');
-                setLoading(false); // Stop loading
+                navigate('/login');
                 console.error("Authentication failed:", error);
             });
+
+
     }, [navigate]);
 
     // Conditional rendering based on loading or error states

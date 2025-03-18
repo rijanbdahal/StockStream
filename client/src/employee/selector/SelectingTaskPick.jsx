@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
 import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/includes/Header.jsx";
+import {jsPDF} from "jspdf";
+import QRCode from "qrcode";
+import axios from "axios";
 
 
 const socket = io("http://localhost:5000");
@@ -21,6 +24,70 @@ const SelectingTaskPick = () => {
     const [inputCheckDigit, setInputCheckDigit] = useState("");
     const [inputQuantity, setInputQuantity] = useState("");
 
+    const [user, setUser] = useState(null);
+    const [userRole, setUserRole] = useState("");
+
+    useEffect(() => {
+        const authToken = localStorage.getItem("authToken");
+
+        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+            },
+            withCredentials: true,
+        })
+            .then(response => {
+                setUser(response.data.user);
+
+                console.log(response.data.user);
+            })
+            .catch(error => {
+                console.error("Authentication failed:", error);
+                navigate("/login");
+            });
+    }, [navigate]);
+
+    useEffect(() => {
+        if (user && user.userRole) {
+            setUserRole(user.userRole);
+            console.log("User Role:", user.userRole);
+            console.log("user",user);
+
+            if (user.userRole !== "Selector") {
+                if(user.userRole === "Admin") {
+                    return;
+                }
+                navigate("/dashboard");
+            }
+        }
+    }, [user, navigate]);
+
+
+    const createShippingLabel =async () => {
+
+        setSuccess("");
+        setError("");
+
+        if (!taskId) {
+            setError("Task ID Missing");
+            return;
+        }
+        try {
+            const qrCodeDataUrl = await QRCode.toDataURL(String(taskId));
+            const doc =  new jsPDF();
+
+            doc.text(`Task ID: ${taskId}`,10,10);
+            doc.addImage(qrCodeDataUrl,10,20,100,100);
+            doc.save(`${taskId}_shippingLabel.pdf`)
+
+        }
+        catch(err) {
+            console.log(err);
+            setError("Failed To Generate label");
+        }
+
+    }
+
     useEffect(() => {
         // Request first item when component mounts
         socket.emit("getItem", taskId);
@@ -39,6 +106,7 @@ const SelectingTaskPick = () => {
             setProductName("");
             setLocation("");
             setQuantityToPick(null);
+            createShippingLabel();
             navigate('/stageorder', { state: { taskId } });
         });
 
@@ -74,6 +142,9 @@ const SelectingTaskPick = () => {
         });
 
         return () => {
+
+            socket.emit ("resetTaskStatus",{taskId,status:false})
+
             socket.off("itemInfo");
             socket.off("taskComplete");
             socket.off("error");

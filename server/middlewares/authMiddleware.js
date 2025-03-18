@@ -10,7 +10,7 @@ const authenticateUser = (req, res, next) => {
         }
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = decoded; // Attach user data to request
+        req.user = decoded;
         next();
     } catch (error) {
         return res.status(401).json({ error: "Invalid or expired token" });

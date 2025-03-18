@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Header from "../includes/Header.jsx";
 import '../../css/generalstylesheet.css';
+import {useNavigate} from "react-router-dom";
 
 const ReleasePickingTask = () => {
     const [orderNumber, setOrderNumber] = useState('');
@@ -9,6 +10,47 @@ const ReleasePickingTask = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [locationId, setLocationId] = useState('');
     const [locations, setLocations] = useState([]);
+
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+    const [userRole, setUserRole] = useState("");
+
+    useEffect(() => {
+        const authToken = localStorage.getItem("authToken");
+
+        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+            },
+            withCredentials: true,
+        })
+            .then(response => {
+                setUser(response.data.user);
+
+                console.log(response.data.user);
+            })
+            .catch(error => {
+                console.error("Authentication failed:", error);
+
+                navigate("/login");
+            });
+    }, [navigate]);
+
+    useEffect(() => {
+        if (user && user.userRole) {
+            setUserRole(user.userRole);
+            console.log("User Role:", user.userRole);
+            console.log("user",user);
+
+            if (user.userRole !== "Supervisor") {
+                if(user.userRole === "Admin") {
+                    return;
+                }
+                navigate("/dashboard");
+            }
+        }
+    }, [user, navigate]);
+
 
     useEffect(() => {
         const fetchLocations = async () => {

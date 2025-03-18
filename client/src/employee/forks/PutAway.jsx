@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from "../../components/includes/Header.jsx";
 import axios from "axios";
 import "../../css/generalstylesheet.css";
 import QRScanner from "../../QRCodeReader.js";
+import {useNavigate} from "react-router-dom";
 
 const PutAway = () => {
     const [palletID, setPalletID] = useState('');
@@ -12,8 +13,47 @@ const PutAway = () => {
     const [isLoading, setIsLoading] = useState(false); // Optional loading state
     const [scanning, setScanning] = useState(false);
 
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+    const [userRole, setUserRole] = useState("");
+
+    useEffect(() => {
+        const authToken = localStorage.getItem("authToken");
+
+        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+            headers: {
+                Authorization: `Bearer ${authToken}`,
+            },
+            withCredentials: true,
+        })
+            .then(response => {
+                setUser(response.data.user);
+
+                console.log(response.data.user);
+            })
+            .catch(error => {
+                console.error("Authentication failed:", error);
+                navigate("/login");
+            });
+    }, [navigate]);
+
+    useEffect(() => {
+        if (user && user.userRole) {
+            setUserRole(user.userRole);
+            console.log("User Role:", user.userRole);
+            console.log("user",user);
+
+            if (user.userRole !== "RTO") {
+                if(user.userRole === "Admin") {
+                    return;
+                }
+                navigate("/dashboard");
+            }
+        }
+    }, [user, navigate]);
+
     const handleScan = (scannedData) => {
-        setPalletID(scannedData);
+        setPalletID(Number(scannedData));
         setScanning(false);
     }
 

@@ -3,6 +3,23 @@ const Location = require("../models/location");
 const PickingPallet = require("../models/pickingPallet");
 const Product = require("../models/product");
 const StagingOrder = require("../models/stagingOrder");
+const PickingOrder = require("../models/pickingOrder");
+
+const updatePickingOrderStatus = async (orderNumber) => {
+    try {
+        const tasks = await PickingTask.find({ orderNumber });
+        const allTasksCompleted = tasks.every(task => task.completedStatus === true);
+
+        if (allTasksCompleted) {
+            await PickingOrder.findOneAndUpdate(
+                { orderNumber },
+                { completedStatus: true }
+            );
+        }
+    } catch (error) {
+        console.error("Error updating order status:", error);
+    }
+};
 
 const proceedToNextItem = async (task, socket) => {
     const nextItem = task.items.find(i => !i.pickedStatus);
@@ -20,28 +37,26 @@ const proceedToNextItem = async (task, socket) => {
     } else {
         task.completedStatus = true;
         await task.save();
+        await updatePickingOrderStatus(task.orderNumber);
         socket.emit("taskComplete", "Task Completed");
     }
 };
 
-
 const handleSocketConnection = (socket) => {
     console.log("New client connected");
 
-    // Handle fetching next item
     socket.on('getItem', async (taskId) => {
         try {
-
-            const task = await PickingTask.findOne({ taskId:taskId });
+            const task = await PickingTask.findOne({ taskId });
             if (!task) return socket.emit("error", "Task not found");
 
-            // Find the next item that is not picked
             const itemToPick = task.items.find(item => !item.pickedStatus);
             if (!itemToPick) {
                 return socket.emit("taskComplete", "Task Completed");
             }
+
             task.assignedStatus = true;
-            task.save();
+            await task.save();
 
             const product = await Product.findOne({ productID: itemToPick.itemId });
             const location = await PickingPallet.findOne({ productId: itemToPick.itemId });
@@ -55,6 +70,7 @@ const handleSocketConnection = (socket) => {
             });
 
         } catch (err) {
+            console.error("Error fetching item:", err);
             socket.emit("error", "Server Error");
         }
     });
@@ -78,7 +94,6 @@ const handleSocketConnection = (socket) => {
             }
 
             if (inputQuantity < item.quantity) {
-                // Emit a confirmation request to the frontend
                 return socket.emit("confirmShort", {
                     message: "Product is short, do you confirm?",
                     requiredQuantity: item.quantity,
@@ -87,10 +102,9 @@ const handleSocketConnection = (socket) => {
                     taskId
                 });
             }
-            else if(inputQuantity > item.quantity){
+            if (inputQuantity > item.quantity) {
                 return socket.emit("error", "Invalid Quantity");
             }
-
 
             pickingPallet.Quantity -= inputQuantity;
             await pickingPallet.save();
@@ -99,32 +113,32 @@ const handleSocketConnection = (socket) => {
             await task.save();
             await proceedToNextItem(task, socket);
 
+            try {
+                const stagingOrder = new StagingOrder({
+                    shippingId: taskId,
+                    totalPallets: task.totalPallets,
+                    status: false,
+                    locationId: task.stagingLocationId,
+                });
 
-            try{
-            const stagingOrder = new StagingOrder({
-                shippingId:taskId,
-                totalPallets:task.totalPallets,
-                status:false,
-                locationId: task.stagingLocationId,
-            });
-
-            stagingOrder.save();}
-            catch(err){
+                await stagingOrder.save();
+            } catch (err) {
+                console.error("Error creating staging order:", err);
                 return socket.emit("error", "Server Error");
             }
+
             socket.emit("success", "Item Picked");
 
-
-
         } catch (err) {
+            console.error("Error verifying user input:", err);
             socket.emit("error", "Server Error");
         }
     });
 
 
+
     socket.on('shortProductConfirm', async ({ taskId, productId, availableQuantity }) => {
         try {
-
             const task = await PickingTask.findOne({ taskId });
             if (!task) return socket.emit("error", "Task not found");
 
@@ -133,46 +147,42 @@ const handleSocketConnection = (socket) => {
 
             const remainingQuantity = item.quantity - availableQuantity;
             item.quantity = availableQuantity;
-            console.log('RemainingQuantity', remainingQuantity);
             item.pickedStatus = true;
-            socket.emit("success", "Item Picked");
-            item.quantity = availableQuantity;
-            task.save();
-
+            await task.save();
 
             if (remainingQuantity > 0) {
                 const newTask = new PickingTask({
-                    orderNumber:task.orderNumber,
-                    storeNumber:task.storeNumber,
+                    orderNumber: task.orderNumber,
+                    storeNumber: task.storeNumber,
                     totalCases: remainingQuantity,
-                    totalStop:1,
-                    placedAt:task.placedAt,
-                    toBeFulfilledBy:task.toBeFulfilledBy,
-                    completedStatus:false,
-                    assignedStatus:false,
-                    totalPallets:1,
+                    totalStop: 1,
+                    placedAt: task.placedAt,
+                    toBeFulfilledBy: task.toBeFulfilledBy,
+                    completedStatus: false,
+                    assignedStatus: false,
+                    totalPallets: 1,
                     urgent: task.urgent,
-                    stagingLocationId:task.stagingLocationId,
-                    items: [
-                        {   itemId: productId,
-                            quantity: remainingQuantity,
-                            pickedStatus: false
-                        }
-                        ],
+                    stagingLocationId: task.stagingLocationId,
+                    items: [{
+                        itemId: productId,
+                        quantity: remainingQuantity,
+                        pickedStatus: false
+                    }]
                 });
-                 newTask.save();
 
+                await newTask.save();
             }
+
             await proceedToNextItem(task, socket);
+
             socket.emit("success", "Item Picked");
             socket.emit("ShortProductSuccess", "Short quantity recorded, moving to next item.");
 
-
         } catch (err) {
+            console.error("Error processing short product confirmation:", err);
             socket.emit("error", "Server Error");
         }
     });
-
 
 };
 

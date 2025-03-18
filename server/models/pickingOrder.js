@@ -11,6 +11,7 @@ const PickingOrderSchema = new mongoose.Schema({
     assignedStatus: { type: Boolean, required: true },
     totalPallets: { type: Number, required: true },
     urgent: { type: Boolean, required: true },
+    isShipped: { type: Boolean, default: false },
     items: [
         {
             itemId: { type: Number, required: true },
