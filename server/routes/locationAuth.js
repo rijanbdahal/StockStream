@@ -1,7 +1,7 @@
 // routes/locationAuth.js
 const express = require('express');
 const router = express.Router();
-const Location = require("../models/Location");
+const Location = require("../models/location");
 
 router.get("/:locationId", async (req, res) => {
     const { locationId } = req.params;
