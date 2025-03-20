@@ -91,14 +91,46 @@ const DockingEntry = () => {
     return (
         <div>
             <Header />
-            <div className="container">
-                <h1>Docking Entry</h1>
-                {loading && <p>Loading...</p>}
-                {error && <p className="error">{error}</p>}
-                {success && <p className="success">{success}</p>}
+            <div className="docking-entry">
+                <form onSubmit={handleSubmit}>
+                    <h2>Docking Entry Form</h2>
+                    {error && <p className="error">{error}</p>}
+                    {success && <p className="success">{success}</p>}
+                    <div className="form-group">
+                        <label>Consignment ID</label>
+                        <input type="text" name="consignmentID" value={dockingEntry.consignmentID} onChange={handleInputChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label>Total Pallets</label>
+                        <input type="number" name="totalPallets" value={dockingEntry.totalPallets} onChange={handleInputChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label>Door Number</label>
+                        <input type="number" name="doorNo" value={dockingEntry.doorNo} onChange={handleInputChange} required />
+                    </div>
+                    <div className="form-group">
+                        <label>Manufacturer</label>
+                        <select name="manufacturerID" value={dockingEntry.manufacturerID} onChange={handleInputChange} required>
+                            <option value="">Select Manufacturer</option>
+                            {manufacturer.map(m => <option key={m.manufacturerID} value={m.manufacturerID}>{m.name}</option>)}
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label>Products</label>
+                        <select name="products" multiple value={dockingEntry.products} onChange={handleProductChange} required>
+                            {product.map(p => <option key={p.productID} value={p.productID}>{p.productName}</option>)}
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label>Arrival Time</label>
+                        <input type="datetime-local" value={arrivalTime} readOnly />
+                    </div>
+                    <button type="submit">Submit</button>
+                    <a href="/client/src/employee/docker/QueryDockingEntry">Query Docking Entry</a>
+                </form>
 
-                <button onClick={generatePDF}>Generate PDF</button>
             </div>
+
         </div>
     );
 };
