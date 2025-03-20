@@ -10,7 +10,7 @@ const ReleasePickingTask = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [locationId, setLocationId] = useState('');
     const [locations, setLocations] = useState([]);
-
+    const API_URL = "https://stockstream-uo87.onrender.com";
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const [userRole, setUserRole] = useState("");
@@ -18,7 +18,7 @@ const ReleasePickingTask = () => {
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -55,7 +55,7 @@ const ReleasePickingTask = () => {
     useEffect(() => {
         const fetchLocations = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/releasepickingtask/locations");
+                const response = await axios.get(`${API_URL}/releasepickingtask/locations`);
                 setLocations(response.data);
             } catch (error) {
                 console.error("Error fetching locations:", error);
@@ -70,7 +70,7 @@ const ReleasePickingTask = () => {
 
         try {
             console.log(locationId);
-            const response = await axios.post("http://localhost:5000/releasepickingtask", {
+            const response = await axios.post(`${API_URL}/releasepickingtask`, {
                 orderNumber: Number(orderNumber),
                 locationId: locationId,
             });

@@ -15,10 +15,12 @@ const LoadingTaskDetails = () => {
     const [user, setUser] = useState(null);
     const [userRole, setUserRole] = useState("");
 
+    const API_URL = "https://stockstream-uo87.onrender.com";
+
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -53,7 +55,7 @@ const LoadingTaskDetails = () => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/loadingTaskAuth/loadingTasks')
+        axios.get(`${API_URL}/loadingTaskAuth/loadingTasks`)
             .then(response => {
                 const { loadingId, truckNumber, stagingLane } = response.data.loadingOrder;
                 setLoadingId(loadingId);

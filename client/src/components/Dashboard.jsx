@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'; // For redirection
 import { Line } from 'react-chartjs-2';  // Import Line chart from Chart.js
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import Header from './includes/Header.jsx';
-import '../css/generalstylesheet.css'; // Import CSS file
+import '../css/generalstylesheet.css';
 
 // Register the necessary Chart.js components
 ChartJS.register(
@@ -18,8 +18,9 @@ ChartJS.register(
 
 const Dashboard = () => {
     const [user, setUser] = useState({
-        userName: 'John Doe'  // Static user name, replace with actual if needed
+        userName: 'John Doe'
     });
+    const API_URL = "https://stockstream-uo87.onrender.com";
 
     // Static task stats data
     const taskStats = {

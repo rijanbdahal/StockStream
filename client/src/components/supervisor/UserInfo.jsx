@@ -13,11 +13,12 @@ const UserInfo = () => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const [userRole, setUserRole] = useState("");
+    const API_URL = "https://stockstream-uo87.onrender.com";
 
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -65,7 +66,7 @@ const UserInfo = () => {
 
         // Send GET request with employeeId as query parameter
         axios
-            .get(`http://localhost:5000/userAuth/${employeeId}`)
+            .get(`${API_URL}/userAuth/${employeeId}`)
             .then((response) => {
                 setUserData(response.data);
                 setLoading(false);

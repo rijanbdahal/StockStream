@@ -15,10 +15,12 @@ const PrintPalletLabel = () => {
     const [user, setUser] = useState(null);
     const [userRole, setUserRole] = useState("");
 
+    const API_URL = "https://stockstream-uo87.onrender.com";
+
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -62,7 +64,7 @@ const PrintPalletLabel = () => {
         }
 
         try {
-            const response = await axios.get(`http://localhost:5000/printLabelAuth/location/${toLocation}`);
+            const response = await axios.get(`${API_URL}/printLabelAuth/location/${toLocation}`);
             console.log(response);
             setPalletId(response.data.palletID);
             setSuccessMessage("Pallet found! Ready to generate label.");

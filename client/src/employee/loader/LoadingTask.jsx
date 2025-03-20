@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import QRScanner from "../../QRCodeReader.js";
-import Header from "../../components/includes/Header.jsx"; // Assuming you have the header component
-import "../../css/generalstylesheet.css"; // Assuming the stylesheet is the same
+import Header from "../../components/includes/Header.jsx";
+import "../../css/generalstylesheet.css";
 
 const LoadingTask = () => {
     const navigate = useNavigate();
@@ -20,13 +20,15 @@ const LoadingTask = () => {
         setScanning(false);
     }
 
+    const API_URL = "https://stockstream-uo87.onrender.com";
+
     const [user, setUser] = useState(null);
     const [userRole, setUserRole] = useState("");
 
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -64,7 +66,7 @@ const LoadingTask = () => {
         setIsLoading(true); // Start loading
 
         try {
-            const response = await axios.post("http://localhost:5000/loadingtask/handleSubmit", {
+            const response = await axios.post(`${API_URL}/loadingtask/handleSubmit`, {
                 loadingId,
                 palletId,
             });

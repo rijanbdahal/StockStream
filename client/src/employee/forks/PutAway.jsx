@@ -12,7 +12,7 @@ const PutAway = () => {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false); // Optional loading state
     const [scanning, setScanning] = useState(false);
-
+    const API_URL = "https://stockstream-uo87.onrender.com";
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const [userRole, setUserRole] = useState("");
@@ -20,7 +20,7 @@ const PutAway = () => {
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -63,7 +63,7 @@ const PutAway = () => {
 
         try {
             // Pass palletID via query parameters
-            const response = await axios.get(`http://localhost:5000/putawayAuth/${palletID}`);
+            const response = await axios.get(`${API_URL}/putawayAuth/${palletID}`);
 
             if (response.status === 200) {
                 setAssignedLocation(response.data.locationId);
@@ -87,7 +87,7 @@ const PutAway = () => {
         setIsLoading(true); // Start loading
 
         try {
-            const response = await axios.post(`http://localhost:5000/putawayAuth/locationAuth`, {
+            const response = await axios.post(`${API_URL}/putawayAuth/locationAuth`, {
                 locationId: assignedLocation,
                 checkDigit: locationCheckDigit
             });

@@ -10,7 +10,7 @@ const ReleaseLoadingTask = () => {
     const [truckNumber, setTruckNumber] = useState("");
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-
+    const API_URL = "https://stockstream-uo87.onrender.com";
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const [userRole, setUserRole] = useState("");
@@ -18,7 +18,7 @@ const ReleaseLoadingTask = () => {
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -53,7 +53,7 @@ const ReleaseLoadingTask = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/releaseloadingtask/getOrders");
+                const response = await axios.get(`${API_URL}/releaseloadingtask/getOrders`);
                 setOrders(response.data);
             } catch (error) {
                 setErrorMessage("Something went wrong");
@@ -66,7 +66,7 @@ const ReleaseLoadingTask = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`http://localhost:5000/releaseloadingtask`, {
+            const response = await axios.post(`${API_URL}/releaseloadingtask`, {
                 orderNumber: orderNumber,
                 truckNumber: truckNumber
             });

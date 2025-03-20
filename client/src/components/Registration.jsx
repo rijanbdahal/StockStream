@@ -7,6 +7,7 @@ const Registration = () => {
     const [userPassword, setUserPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const API_URL = "https://stockstream-uo87.onrender.com";
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -19,7 +20,7 @@ const Registration = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/registrationAuth", {
+            const response = await fetch(`${API_URL}/registrationAuth`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify({ userName, userEmployeeId, userRole, userPassword }),

@@ -7,7 +7,7 @@ const Login = () => {
     const [userId, setUserId] = useState('');
     const [userPassword, setUserPassword] = useState('');
     const [error, setError] = useState('');
-
+    const API_URL = "https://stockstream-uo87.onrender.com";
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
 
@@ -21,7 +21,7 @@ const Login = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:5000/loginAuth', {
+            const response = await fetch(`${API_URL}/loginAuth`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId, userPassword }),

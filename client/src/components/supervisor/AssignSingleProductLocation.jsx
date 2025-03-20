@@ -14,10 +14,12 @@ const AssignSingleProductLocation = () => {
     const [userRole, setUserRole] = useState("");
     const navigate = useNavigate();
 
+    const API_URL = "https://stockstream-uo87.onrender.com";
+
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -49,7 +51,7 @@ const AssignSingleProductLocation = () => {
     useEffect(() => {
         setMessage({ text: "", type: "" });
         axios
-            .get("http://localhost:5000/assignproductlocation/products")
+            .get(`${API_URL}/assignproductlocation/products`)
             .then((response) => {
                 setProducts(response.data);
             })
@@ -65,7 +67,7 @@ const AssignSingleProductLocation = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post("http://localhost:5000/assignproductlocation", {
+            const response = await axios.post(`${API_URL}/assignproductlocation`, {
                 productId,
                 locationId,
             });

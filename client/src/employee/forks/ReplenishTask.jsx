@@ -15,7 +15,7 @@ const ReplenishTask = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const [taskUpdated, setTaskUpdated] = useState(false); // State to trigger re-fetch
     const [scanning, setScanning] = useState(false);
-
+    const API_URL = "https://stockstream-uo87.onrender.com";
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const [userRole, setUserRole] = useState("");
@@ -23,7 +23,7 @@ const ReplenishTask = () => {
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -66,7 +66,7 @@ const ReplenishTask = () => {
         setErrorMessage("");
 
         axios
-            .get("http://localhost:5000/replenishtask/gettask")
+            .get(`${API_URL}/replenishtask/gettask`)
             .then((response) => {
                 setFromLocationId(response.data?.location?.locationId || "");
                 setPickingPalletData(response.data?.pickingPallet || null);
@@ -97,7 +97,7 @@ const ReplenishTask = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/replenishtask/verifypalletid", {
+            const response = await axios.post(`${API_URL}/replenishtask/verifypalletid`, {
                 palletId,
             });
 
@@ -119,7 +119,7 @@ const ReplenishTask = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/replenishtask/verifycheckdigit", {
+            const response = await axios.post(`${API_URL}/replenishtask/verifycheckdigit`, {
                 checkDigit,
                 toLocationId,
                 palletId,
@@ -142,7 +142,7 @@ const ReplenishTask = () => {
         setErrorMessage("");
 
         axios
-            .get("http://localhost:5000/replenishtask/skip")
+            .get(`${API_URL}/replenishtask/skip`)
             .then((response) => {
                 setFromLocationId(response.data?.location?.locationId || "");
                 setPickingPalletData(response.data?.pickingPallet || null);

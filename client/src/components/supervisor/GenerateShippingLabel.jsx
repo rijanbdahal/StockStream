@@ -4,7 +4,9 @@ import QRCode from "qrcode";
 import { jsPDF } from "jspdf";
 import Header from "../includes/Header.jsx";
 import "../../css/generalstylesheet.css";
-import {useNavigate} from "react-router-dom"; // ✅ Same stylesheet
+import {useNavigate} from "react-router-dom";
+
+const API_URL = "https://stockstream-uo87.onrender.com";
 
 const GenerateShippingLabel = () => {
     const [taskId, setTaskId] = useState("");
@@ -18,7 +20,7 @@ const GenerateShippingLabel = () => {
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -61,7 +63,7 @@ const GenerateShippingLabel = () => {
         }
 
         try {
-            const response = await axios.get(`http://localhost:5000/printLabelAuth/task/${taskId}`);
+            const response = await axios.get(`${API_URL}/printLabelAuth/task/${taskId}`);
             if (response.data) {
                 setTaskDetails(response.data); // Set the task details here
                 setSuccessMessage("Task ID found! Ready to generate label.");

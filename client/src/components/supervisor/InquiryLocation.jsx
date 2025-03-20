@@ -14,6 +14,8 @@ const InquiryLocation = () => {
     const [locationData, setLocationData] = useState(null);
     const navigate = useNavigate();
 
+    const API_URL = "https://stockstream-uo87.onrender.com";
+
     const [user, setUser] = useState(null);
 
     const [userRole, setUserRole] = useState("");
@@ -21,7 +23,7 @@ const InquiryLocation = () => {
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -67,7 +69,7 @@ const InquiryLocation = () => {
         const locationId = `${aisle.trim()}${columnNumber.trim()}${rowNumber.trim()}`;
         console.log("Generated locationId:", locationId);
 
-        axios.get(`http://localhost:5000/locationAuth/${locationId}`)
+        axios.get(`${API_URL}/locationAuth/${locationId}`)
             .then((response) => {
                 setLocationData(response.data);
                 setAvailable(response.data.status);
@@ -84,7 +86,7 @@ const InquiryLocation = () => {
         if (!locationData) return;
         console.log(locationData);
 
-        axios.put(`http://localhost:5000/locationAuth/${locationData.locationId}/changeStatus`)
+        axios.put(`${API_URL}/locationAuth/${locationData.locationId}/changeStatus`)
             .then((response) => {
                 setAvailable(response.data.status);
             })

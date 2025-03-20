@@ -20,6 +20,7 @@ const ReceivingTask = () => {
     const [scanning, setScanning] = useState(false);
     const [products, setProducts] = useState([]);
 
+    const API_URL = "https://stockstream-uo87.onrender.com";
 
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
@@ -28,7 +29,7 @@ const ReceivingTask = () => {
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -71,7 +72,7 @@ const ReceivingTask = () => {
             if (!consignmentID) return; // Prevent API call if no consignment ID
 
             try {
-                const response = await axios.get(`http://localhost:5000/receivingTaskAuth/products/${consignmentID}`);
+                const response = await axios.get(`${API_URL}/receivingTaskAuth/products/${consignmentID}`);
                 console.log(response);
                 setProducts(response.data.products || []); // Ensure data consistency
                 setError("");
@@ -97,7 +98,7 @@ const ReceivingTask = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post("http://localhost:5000/receivingTaskAuth", {
+            const response = await axios.post(`${API_URL}/receivingTaskAuth`, {
                 consignmentID,
                 productID,
                 palletID,

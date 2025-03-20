@@ -10,13 +10,13 @@ const Profile = () => {
     const [loading, setLoading] = useState(true); // Set loading to true initially
     const [error, setError] = useState(null);
     const navigate = useNavigate();
-
+    const API_URL = "https://stockstream-uo87.onrender.com";
 
     useEffect(() => {
 
         const authToken = localStorage.getItem('authToken');
 
-        axios.get('http://localhost:5000/authRoutes/api/auth/user', {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },

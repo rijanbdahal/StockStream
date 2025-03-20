@@ -17,11 +17,11 @@ const StageOrder = () => {
     const [user, setUser] = useState(null);
 
     const [userRole, setUserRole] = useState("");
-
+    const API_URL = "https://stockstream-uo87.onrender.com";
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 
-        axios.get("http://localhost:5000/authRoutes/api/auth/user", {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -58,7 +58,7 @@ const StageOrder = () => {
         const fetchLocation = async () => {
             try {
                 console.log(taskId);
-                const response = await axios.get(`http://localhost:5000/stageorder/${taskId}`);
+                const response = await axios.get(`${API_URL}/stageorder/${taskId}`);
                 const fetchedLocation = response.data.locationId; // Assuming this contains the location details
                 setLocationId(fetchedLocation);
             }catch (error) {
@@ -83,7 +83,7 @@ const StageOrder = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:5000/stageorder/verify", {
+            const response = await axios.post(`${API_URL}/stageorder/verify`, {
                 taskId,
                 checkDigit
             });

@@ -4,9 +4,10 @@ import axios from "axios";
 
 const Logout = () => {
     const navigate = useNavigate();
+    const API_URL = "https://stockstream-uo87.onrender.com";
 
     useEffect(() => {
-        axios.post("http://localhost:5000/authRoutes/api/auth/logout", {}, { withCredentials: true })
+        axios.post(`${API_URL}/authRoutes/api/auth/logout`, {}, { withCredentials: true })
             .then(() => {
                 localStorage.removeItem("authToken");
 
