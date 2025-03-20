@@ -7,7 +7,7 @@ const Logout = () => {
     const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
-        axios.post(`${API_URL}/authRoutes/api/auth/logout`, {}, { withCredentials: true })
+        axios.post(`${API_URL}/loginAuth/logOut`, {}, { withCredentials: true })
             .then(() => {
                 localStorage.removeItem("authToken");
                 navigate("/login");

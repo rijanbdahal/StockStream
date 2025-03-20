@@ -48,4 +48,20 @@ router.post("/", async (req, res) => {
     }
 });
 
+router.post("/logout", async (req, res) => {
+    try {
+        res.clearCookie("token", {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "Strict",
+        });
+
+        res.json({ message: "Logged out successfully" });
+    } catch (error) {
+        console.error("Logout error:", error);
+        res.status(500).json({ msg: "Server error during logout" });
+    }
+});
+
+
 module.exports = router;
