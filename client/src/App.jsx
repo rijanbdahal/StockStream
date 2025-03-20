@@ -1,63 +1,92 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './components/Login.jsx'; // Assuming you have LoginPage component
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Registration from "./components/Registration.jsx";
-import Dashboard from "./components/Dashboard.jsx";
-import Error from "./components/404.jsx";
-import UserInfo from "./components/supervisor/UserInfo.jsx";
-import Profile from "./components/userInfo/Profile.jsx";
-import InquiryLocation from "./components/supervisor/InquiryLocation.jsx";
-import DockingEntry from "./employee/docker/DockingEntry.jsx";
-import QueryDockingEntry from "./employee/docker/QueryDockingEntry.jsx";
-import ReceivingTask from "./employee/receiver/ReceivingTask.jsx";
-import PutAway from "./employee/forks/PutAway.jsx";
-import SelectingTaskDetails from "./employee/selector/SelectingTaskDetails.jsx";
+// Authentication
+import LoginPage from './components/Login';
+import Registration from './components/Registration';
+import Logout from './components/Logout';
 
-import AssignSingleProductLocation from "./components/supervisor/AssignSingleProductLocation.jsx";
-import ReplenishTask from "./employee/forks/ReplenishTask.jsx";
-import ReleasePickingTask from "./components/supervisor/ReleasePickingTask.jsx";
-import SelectingTaskPick from "./employee/selector/SelectingTaskPick.jsx";
-import StageOrder from "./employee/selector/StageOrder.jsx";
-import PrintPalletLabel from "./components/supervisor/PrintPalletLabel.jsx";
-import ReleaseLoadingTask from "./components/supervisor/ReleasingLoadingTask.jsx";
-import GenerateShippingLabel from "./components/supervisor/GenerateShippingLabel.jsx";
-import LoadingTaskDetails from "./employee/loader/LoadingTaskDetails.jsx";
-import LoadingTask from "./employee/loader/LoadingTask.jsx";
-import Logout from "./components/Logout.jsx";
+// Dashboard & User
+import Dashboard from './components/Dashboard';
+import Profile from './components/userInfo/Profile';
+import UserInfo from './components/supervisor/UserInfo';
+
+// Supervisor
+import InquiryLocation from './components/supervisor/InquiryLocation';
+import AssignSingleProductLocation from './components/supervisor/AssignSingleProductLocation';
+import ReleasePickingTask from './components/supervisor/ReleasePickingTask';
+import PrintPalletLabel from './components/supervisor/PrintPalletLabel';
+import ReleaseLoadingTask from './components/supervisor/ReleasingLoadingTask';
+import GenerateShippingLabel from './components/supervisor/GenerateShippingLabel';
+
+// Employee - Docking
+import DockingEntry from './employee/docking/DockingEntry';
+import QueryDockingEntry from './employee/docking/QueryDockingEntry';
+
+// Employee - Receiving
+import ReceivingTask from './employee/receiving/ReceivingTask';
+
+// Employee - Forklift
+import PutAway from './employee/forks/PutAway';
+import ReplenishTask from './employee/forks/ReplenishTask';
+
+// Employee - Selector
+import SelectingTaskDetails from './employee/selector/SelectingTaskDetails';
+import SelectingTaskPick from './employee/selector/SelectingTaskPick';
+import StageOrder from './employee/selector/StageOrder';
+
+// Employee - Loader
+import LoadingTaskDetails from './employee/loader/LoadingTaskDetails';
+import LoadingTask from './employee/loader/LoadingTask';
+
+// Error Page
+import Error from './components/404';
 
 const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/userinfo" element={<UserInfo />} />
-                <Route path="*" element={<Error />} />
-
+                {/* Authentication */}
                 <Route path="/login" element={<LoginPage />} />
-                <Route path="/registration" element={<Registration/>}/>
-                <Route path="/dashboard" element={<Dashboard/>}/>
-                <Route path="/profile" element={<Profile/>}/>
-                <Route path="/inquirelocation" element={<InquiryLocation/>}/>
-                <Route path="/dockingentry" element={<DockingEntry/>}/>
-                <Route path="/querydockingentry" element={<QueryDockingEntry/>}/>
-                <Route path="/receivingtask" element={<ReceivingTask/>}/>
-                <Route path="/putaway" element={<PutAway/>}/>
-                <Route path="/selectingtaskdetails" element={<SelectingTaskDetails/>}/>
-                <Route path="/assignsingleproductlocation" element={<AssignSingleProductLocation/>}/>
-                <Route path="/replenishtask" element={<ReplenishTask/>}/>
-                <Route path="/releasepickingtask" element={<ReleasePickingTask/>}/>
-                <Route path="/selectingtaskpick" element={<SelectingTaskPick/>}/>
-                <Route path="/stageorder" element={<StageOrder/>}/>
-                <Route path="/printpalletlabel" element={<PrintPalletLabel/>}/>
-                <Route path="/releaseloadingtask" element={<ReleaseLoadingTask/>}/>
-                <Route path="/printshippinglabel" element={<GenerateShippingLabel/>}/>
-                <Route path="/loadingtaskdetails" element={<LoadingTaskDetails/>}/>
-                <Route path="/loadingtask" element={<LoadingTask/>}/>
+                <Route path="/registration" element={<Registration />} />
+                <Route path="/logout" element={<Logout />} />
+
+                {/* Main Pages */}
                 <Route path="/" element={<Dashboard />} />
-                <Route path="/logout" element={<Logout/>}/>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/userinfo" element={<UserInfo />} />
 
+                {/* Supervisor Routes */}
+                <Route path="/inquirelocation" element={<InquiryLocation />} />
+                <Route path="/assignsingleproductlocation" element={<AssignSingleProductLocation />} />
+                <Route path="/releasepickingtask" element={<ReleasePickingTask />} />
+                <Route path="/printpalletlabel" element={<PrintPalletLabel />} />
+                <Route path="/releaseloadingtask" element={<ReleaseLoadingTask />} />
+                <Route path="/printshippinglabel" element={<GenerateShippingLabel />} />
 
+                {/* Docking Routes */}
+                <Route path="/dockingentry" element={<DockingEntry />} />
+                <Route path="/querydockingentry" element={<QueryDockingEntry />} />
 
+                {/* Receiving Routes */}
+                <Route path="/receivingtask" element={<ReceivingTask />} />
+
+                {/* Forklift Routes */}
+                <Route path="/putaway" element={<PutAway />} />
+                <Route path="/replenishtask" element={<ReplenishTask />} />
+
+                {/* Selector Routes */}
+                <Route path="/selectingtaskdetails" element={<SelectingTaskDetails />} />
+                <Route path="/selectingtaskpick" element={<SelectingTaskPick />} />
+                <Route path="/stageorder" element={<StageOrder />} />
+
+                {/* Loader Routes */}
+                <Route path="/loadingtaskdetails" element={<LoadingTaskDetails />} />
+                <Route path="/loadingtask" element={<LoadingTask />} />
+
+                {/* Catch-All Error Page */}
+                <Route path="*" element={<Error />} />
             </Routes>
         </Router>
     );

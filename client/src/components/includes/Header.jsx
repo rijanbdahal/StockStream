@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import logo from './logo/logo.jpg';
 import '../../css/generalstylesheet.css';
@@ -7,23 +7,26 @@ import '../../css/generalstylesheet.css';
 const Header = () => {
     const [userRole, setUserRole] = useState(null);
     const navigate = useNavigate();
-    const API_URL = process.env.REACT_APP_API_URL;
+    const API_URL = process.env.REACT_APP_API_URL ; // Fallback URL
+
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
+        if (!authToken) {
+            navigate('/login'); // Redirect to login if no token
+            return;
+        }
 
         axios.get(`${API_URL}/authRoutes/api/auth/user`, {
-            headers: {
-                Authorization: `Bearer ${authToken}`,
-            },
+            headers: { Authorization: `Bearer ${authToken}` },
             withCredentials: true,
         })
             .then(response => {
-                setUserRole(response.data.user.userRole); // Ensure correct role assignment
+                setUserRole(response.data.user.userRole);
             })
             .catch(error => {
                 console.error("Failed to fetch user role:", error);
             });
-    }, [navigate]);
+    }, []);
 
     const navLinks = [
         { path: "/dashboard", label: "Dashboard", roles: ["Admin", "Loader","Supervisor","Receiver","Selector","Docker","RTO"] },
@@ -43,7 +46,6 @@ const Header = () => {
         { path: "/releaseloadingtask", label: "Release Loading Task", roles: ["Admin", "Supervisor"] },
         { path: "/loadingtaskdetails", label: "Loading", roles: ["Admin", "Loader"] },
         { path: "/logout", label: "Logout", roles: ["Admin", "Loader","Supervisor","Receiver","Selector","Docker","RTO"] },
-
     ];
 
     return (
@@ -56,7 +58,7 @@ const Header = () => {
                     {navLinks.map(link =>
                         userRole && link.roles.includes(userRole) ? (
                             <li key={link.path}>
-                                <a href={link.path}>{link.label}</a>
+                                <Link to={link.path}>{link.label}</Link>
                             </li>
                         ) : null
                     )}
