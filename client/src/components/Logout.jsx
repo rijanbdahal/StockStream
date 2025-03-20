@@ -10,7 +10,6 @@ const Logout = () => {
         axios.post(`${API_URL}/authRoutes/api/auth/logout`, {}, { withCredentials: true })
             .then(() => {
                 localStorage.removeItem("authToken");
-
                 navigate("/login");
             })
             .catch((error) => {
