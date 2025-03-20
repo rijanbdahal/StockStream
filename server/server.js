@@ -25,13 +25,13 @@ const loadingtask = require("./routes/loadingTask");
 const releaseLoadingTask = require("./routes/releaseLoadingTask.js");
 const { handleSocketConnection } = require("./middlewares/socketUtils");
 
-dotenv.config(); // ✅ Load .env before using process.env
+dotenv.config();
 
 const app = express();
 const server = createServer(app);
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL : "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 };
@@ -40,7 +40,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 const io = new Server(server, { cors: corsOptions });
-
 
 const MONGO_URI = process.env.MONGO_URI;
 if (!MONGO_URI) {
@@ -64,7 +63,6 @@ io.on("connection", (socket) => {
     });
 });
 
-// ✅ Define API Routes
 app.use("/loginAuth", loginAuth);
 app.use("/registrationAuth", registrationAuth);
 app.use("/authRoutes", authRoutes);
@@ -79,16 +77,16 @@ app.use("/assignproductlocation", assignProductLocation);
 app.use("/replenishtask", replenishTask);
 app.use("/releasepickingtask", releasePickingTask);
 app.use("/stageOrder", stageOrder);
-app.use("/printLabelAuth",printLabelAuth);
+app.use("/printLabelAuth", printLabelAuth);
 app.use("/loadingTaskAuth", loadingTaskAuth);
-app.use("/releaseloadingtask",releaseLoadingTask);
+app.use("/releaseloadingtask", releaseLoadingTask);
 app.use("/loadingtask", loadingtask);
+
 app.all("*", (req, res) => {
     res.status(404).send("Route not found");
 });
 
-// ✅ Start the Server
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
-    console.log(` Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
