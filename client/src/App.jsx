@@ -20,11 +20,11 @@ import ReleaseLoadingTask from './components/supervisor/ReleasingLoadingTask';
 import GenerateShippingLabel from './components/supervisor/GenerateShippingLabel';
 
 // Employee - Docking
-import DockingEntry from './employee/docking/DockingEntry';
-import QueryDockingEntry from './employee/docking/QueryDockingEntry';
+import DockingEntry from './employee/docker/DockingEntry.jsx';
+import QueryDockingEntry from './employee/docker/QueryDockingEntry';
 
 // Employee - Receiving
-import ReceivingTask from './employee/receiving/ReceivingTask';
+import ReceivingTask from './employee/receiver/ReceivingTask';
 
 // Employee - Forklift
 import PutAway from './employee/forks/PutAway';
