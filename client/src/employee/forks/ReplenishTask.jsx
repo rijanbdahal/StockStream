@@ -15,7 +15,7 @@ const ReplenishTask = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const [taskUpdated, setTaskUpdated] = useState(false); // State to trigger re-fetch
     const [scanning, setScanning] = useState(false);
-    const API_URL = "https://stockstream-uo87.onrender.com";
+    const API_URL = process.env.REACT_APP_API_URL;
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const [userRole, setUserRole] = useState("");

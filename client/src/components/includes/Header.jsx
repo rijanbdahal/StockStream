@@ -7,11 +7,11 @@ import '../../css/generalstylesheet.css';
 const Header = () => {
     const [userRole, setUserRole] = useState(null);
     const navigate = useNavigate();
-
+    const API_URL = process.env.REACT_APP_API_URL;
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
 
-        axios.get('http://localhost:5000/authRoutes/api/auth/user', {
+        axios.get(`${API_URL}/authRoutes/api/auth/user`, {
             headers: {
                 Authorization: `Bearer ${authToken}`,
             },
@@ -22,11 +22,9 @@ const Header = () => {
             })
             .catch(error => {
                 console.error("Failed to fetch user role:", error);
-                navigate('/login'); // Redirect if authentication fails
             });
     }, [navigate]);
 
-    // Define role-based navigation items
     const navLinks = [
         { path: "/dashboard", label: "Dashboard", roles: ["Admin", "Loader","Supervisor","Receiver","Selector","Docker","RTO"] },
         { path: "/userinfo", label: "Employee Query", roles: ["Admin", "Supervisor"] },
@@ -38,7 +36,7 @@ const Header = () => {
         { path: "/putaway", label: "Putaway", roles: ["Admin", "RTO"] },
         { path: "/replenishtask", label: "Replenish", roles: ["RTO"] },
         { path: "/selectingtaskdetails", label: "Selection", roles: ["Admin", "Selector"] },
-        { path: "/assignsingleproductlocation", label: "Assign Product Location", roles: ["Admin", "Supervisor"] },
+        { path: "/assignsingleproductlocation", label: "Assign Location", roles: ["Admin", "Supervisor"] },
         { path: "/releasepickingtask", label: "Release Picking Task", roles: ["Admin", "Supervisor"] },
         { path: "/printpalletlabel", label: "Print Pallet Label", roles: ["Admin", "Supervisor"] },
         { path: "/printshippinglabel", label: "Print Shipping Label", roles: ["Admin", "Supervisor"] },

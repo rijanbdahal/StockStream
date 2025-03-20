@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/Login.jsx'; // Assuming you have LoginPage component
 
 import Registration from "./components/Registration.jsx";
-import Dashboard from "./components/Dashboard.jsx"; // Replace with actual page component
+import Dashboard from "./components/Dashboard.jsx";
 import Error from "./components/404.jsx";
 import UserInfo from "./components/supervisor/UserInfo.jsx";
 import Profile from "./components/userInfo/Profile.jsx";

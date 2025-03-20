@@ -13,8 +13,8 @@ const InquiryLocation = () => {
     const [loading, setLoading] = useState(false);
     const [locationData, setLocationData] = useState(null);
     const navigate = useNavigate();
+    const API_URL = process.env.REACT_APP_API_URL;
 
-    const API_URL = "https://stockstream-uo87.onrender.com";
 
     const [user, setUser] = useState(null);
 

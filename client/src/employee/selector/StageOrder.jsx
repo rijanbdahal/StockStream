@@ -17,7 +17,7 @@ const StageOrder = () => {
     const [user, setUser] = useState(null);
 
     const [userRole, setUserRole] = useState("");
-    const API_URL = "https://stockstream-uo87.onrender.com";
+    const API_URL = process.env.REACT_APP_API_URL;
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
 

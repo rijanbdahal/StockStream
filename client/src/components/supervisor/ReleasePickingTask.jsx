@@ -10,7 +10,7 @@ const ReleasePickingTask = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [locationId, setLocationId] = useState('');
     const [locations, setLocations] = useState([]);
-    const API_URL = "https://stockstream-uo87.onrender.com";
+    const API_URL = process.env.REACT_APP_API_URL;
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const [userRole, setUserRole] = useState("");

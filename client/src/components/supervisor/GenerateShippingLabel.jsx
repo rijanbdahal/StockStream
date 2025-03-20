@@ -6,9 +6,9 @@ import Header from "../includes/Header.jsx";
 import "../../css/generalstylesheet.css";
 import {useNavigate} from "react-router-dom";
 
-const API_URL = "https://stockstream-uo87.onrender.com";
 
 const GenerateShippingLabel = () => {
+    const API_URL = process.env.REACT_APP_API_URL;
     const [taskId, setTaskId] = useState("");
     const [taskDetails, setTaskDetails] = useState(null); // Separate state for task details
     const [successMessage, setSuccessMessage] = useState("");

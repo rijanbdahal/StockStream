@@ -26,50 +26,55 @@ body {
 header {
     background-color: #000;
     color: white;
-    height: 80px; /* Thicker header */
-    padding: 0 30px;
+    width: 250px; /* Sidebar width */
+    height: 100vh; /* Full height */
+    padding: 30px 20px;
     display: flex;
-    justify-content: space-between; /* Ensures logo is on the left & nav is on the right */
-    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content */
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 1000;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 6px 0px 12px rgba(0, 0, 0, 0.15);
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 100vh; /* Prevent overflow beyond viewport */
 }
 
-/* ✅ Larger Logo (Fixed Position & Proportion) */
+/* ✅ Larger Logo at the Top */
 .logo-container {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
 }
 
 .logo {
-    height: 65px; /* Increased size */
+    height: 80px; /* Increased size */
     width: auto;
 }
 
-/* ✅ Navigation Links on the Right */
+/* ✅ Vertical Navigation */
 nav {
-    margin-left: auto; /* Push navigation to the right */
+    width: 100%;
 }
 
 nav ul {
     display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 nav ul li {
-    margin-left: 25px; /* Increased spacing */
+    margin-bottom: 20px; /* Space between items */
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-size: 18px; /* Slightly larger font */
+    font-size: 18px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -77,6 +82,12 @@ nav ul li a {
 nav ul li a:hover,
 nav ul li a.active {
     color: #F55139;
+}
+
+
+main {
+    margin-left: 250px;
+    padding: 20px;
 }
 
 /* ==============================

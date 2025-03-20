@@ -10,7 +10,8 @@ const Profile = () => {
     const [loading, setLoading] = useState(true); // Set loading to true initially
     const [error, setError] = useState(null);
     const navigate = useNavigate();
-    const API_URL = "https://stockstream-uo87.onrender.com";
+    const API_URL = process.env.REACT_APP_API_URL;
+
 
     useEffect(() => {
 

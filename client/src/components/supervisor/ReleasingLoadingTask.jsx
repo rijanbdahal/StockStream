@@ -10,10 +10,10 @@ const ReleaseLoadingTask = () => {
     const [truckNumber, setTruckNumber] = useState("");
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
-    const API_URL = "https://stockstream-uo87.onrender.com";
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const [userRole, setUserRole] = useState("");
+    const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");

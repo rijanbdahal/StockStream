@@ -20,7 +20,7 @@ const ReceivingTask = () => {
     const [scanning, setScanning] = useState(false);
     const [products, setProducts] = useState([]);
 
-    const API_URL = "https://stockstream-uo87.onrender.com";
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const [user, setUser] = useState(null);
     const navigate = useNavigate();

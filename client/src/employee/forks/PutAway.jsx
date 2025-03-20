@@ -12,7 +12,7 @@ const PutAway = () => {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false); // Optional loading state
     const [scanning, setScanning] = useState(false);
-    const API_URL = "https://stockstream-uo87.onrender.com";
+    const API_URL = process.env.REACT_APP_API_URL;
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
     const [userRole, setUserRole] = useState("");

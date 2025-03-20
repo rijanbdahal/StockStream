@@ -7,7 +7,7 @@ const Registration = () => {
     const [userPassword, setUserPassword] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-    const API_URL = "https://stockstream-uo87.onrender.com";
+    const API_URL = process.env.REACT_APP_API_URL;
 
     const handleSubmit = async (e) => {
         e.preventDefault();

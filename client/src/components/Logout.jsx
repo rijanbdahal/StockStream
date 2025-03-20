@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Logout = () => {
     const navigate = useNavigate();
-    const API_URL = "https://stockstream-uo87.onrender.com";
+    const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         axios.post(`${API_URL}/authRoutes/api/auth/logout`, {}, { withCredentials: true })
