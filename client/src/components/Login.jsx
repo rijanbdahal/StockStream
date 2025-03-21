@@ -74,7 +74,7 @@ const Login = () => {
             </form>
             <p>
                 Don't have an account?{" "}
-                <a style={{ color: "blue" }} href="/registration">
+                <a style={{ color: "blue" }} href="/#/registration">
                     Sign Up
                 </a>
             </p>
