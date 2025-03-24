@@ -127,7 +127,7 @@ const Registration = () => {
                 <button type="submit">Register</button>
             </form>
 
-            <p>Already signed up? <a  style={{color:"blue"}} href="/Login">Login</a></p>
+            <p>Already signed up? <a  style={{color:"blue"}} href="/#Login">Login</a></p>
         </div>
     );
 };
