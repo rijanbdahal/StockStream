@@ -109,7 +109,7 @@ const Registration = () => {
                         <option value="Receiver">Receiver</option>
                         <option value="RTO">RTO</option>
                         <option value="Loader">Loader</option>
-                        <option value="Docker">Loader</option>
+                        <option value="Docker">Docker</option>
                     </select>
                 </div>
 
