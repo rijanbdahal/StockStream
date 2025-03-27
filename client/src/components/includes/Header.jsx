@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import logo from './logo/logo.jpg';
-import '../../css/header.css';
+import '../../css/generalstylesheet.css';
 
 const Header = () => {
     const [userRole, setUserRole] = useState(null);
