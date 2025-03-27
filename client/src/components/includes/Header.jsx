@@ -6,14 +6,14 @@ import '../../css/generalstylesheet.css';
 
 const Header = () => {
     const [userRole, setUserRole] = useState(null);
-    const [isVisible, setIsVisible] = useState(true);
     const navigate = useNavigate();
-    const API_URL = process.env.REACT_APP_API_URL;
+    const API_URL = process.env.REACT_APP_API_URL ;
+    const [headerVisible, setHeaderVisible] = useState(true);
 
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
         if (!authToken) {
-            navigate('/login');
+            navigate('/login'); // Redirect to login if no token
             return;
         }
 
@@ -51,10 +51,10 @@ const Header = () => {
 
     return (
         <>
-            <button onClick={() => setIsVisible(!isVisible)} className="toggle-header-button">
-                {isVisible ? 'Hide Header' : 'Show Header'}
+            <button onClick={() => setHeaderVisible(!headerVisible)} className="toggle-header-button">
+                {headerVisible ? 'Hide Header' : 'Show Header'}
             </button>
-            {isVisible && (
+            {headerVisible && (
                 <header>
                     <div className="logo-container">
                         <img src={logo} alt="Dashboard" className="logo" />
