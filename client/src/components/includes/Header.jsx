@@ -6,9 +6,9 @@ import '../../css/generalstylesheet.css';
 
 const Header = () => {
     const [userRole, setUserRole] = useState(null);
-    const navigate = useNavigate();
-    const API_URL = process.env.REACT_APP_API_URL ;
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
@@ -51,8 +51,11 @@ const Header = () => {
 
     return (
         <header>
-            <div className="logo-container">
-                <img src={logo} alt="Dashboard" className="logo" />
+            <div className="header-container">
+                <div className="logo-container">
+                    <img src={logo} alt="Dashboard" className="logo" />
+                </div>
+
                 <button
                     className="hamburger-button"
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -61,9 +64,14 @@ const Header = () => {
                 </button>
             </div>
 
-            {/* Conditionally Render Navigation */}
             {menuOpen && (
-                <nav>
+                <nav className="mobile-menu">
+                    <button
+                        className="close-menu-button"
+                        onClick={() => setMenuOpen(false)}
+                    >
+                        ✖
+                    </button>
                     <ul>
                         {navLinks.map(link =>
                             userRole && link.roles.includes(userRole) ? (
