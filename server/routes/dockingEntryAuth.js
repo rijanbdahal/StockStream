@@ -54,7 +54,7 @@ router.post('/dockingentry', async (req, res) => {
             return res.status(400).json({ error: "Missing required fields. Please check your data." });
         }
 
-        // Optional: Validate that arrivalTime is a valid date
+
         if (isNaN(new Date(dockingEntry.arrivalTime))) {
             return res.status(400).json({ error: "Invalid arrival time." });
         }

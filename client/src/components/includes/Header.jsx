@@ -6,13 +6,14 @@ import '../../css/generalstylesheet.css';
 
 const Header = () => {
     const [userRole, setUserRole] = useState(null);
+    const [isVisible, setIsVisible] = useState(true);
     const navigate = useNavigate();
-    const API_URL = process.env.REACT_APP_API_URL ; // Fallback URL
+    const API_URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
         if (!authToken) {
-            navigate('/login'); // Redirect to login if no token
+            navigate('/login');
             return;
         }
 
@@ -49,22 +50,29 @@ const Header = () => {
     ];
 
     return (
-        <header>
-            <div className="logo-container">
-                <img src={logo} alt="Dashboard" className="logo" />
-            </div>
-            <nav>
-                <ul>
-                    {navLinks.map(link =>
-                        userRole && link.roles.includes(userRole) ? (
-                            <li key={link.path}>
-                                <Link to={link.path}>{link.label}</Link>
-                            </li>
-                        ) : null
-                    )}
-                </ul>
-            </nav>
-        </header>
+        <>
+            <button onClick={() => setIsVisible(!isVisible)} className="toggle-header-button">
+                {isVisible ? 'Hide Header' : 'Show Header'}
+            </button>
+            {isVisible && (
+                <header>
+                    <div className="logo-container">
+                        <img src={logo} alt="Dashboard" className="logo" />
+                    </div>
+                    <nav>
+                        <ul>
+                            {navLinks.map(link =>
+                                userRole && link.roles.includes(userRole) ? (
+                                    <li key={link.path}>
+                                        <Link to={link.path}>{link.label}</Link>
+                                    </li>
+                                ) : null
+                            )}
+                        </ul>
+                    </nav>
+                </header>
+            )}
+        </>
     );
 };
 
