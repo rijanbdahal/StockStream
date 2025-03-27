@@ -9,7 +9,7 @@ const validateRegistration = [
         .matches(/^[A-Za-z\s]+$/)
         .withMessage('Username cannot contain numbers'),
 
-    // Check if userEmployeeId is not empty
+
     body('userEmployeeId')
         .notEmpty()
         .withMessage('Employee ID is required')
@@ -21,7 +21,7 @@ const validateRegistration = [
         .withMessage('User Role is required')
         .trim(),
 
-    // Password should have at least 6 characters
+
     body('userPassword')
         .isLength({ min: 6 })
         .withMessage('Password must be at least 6 characters long')

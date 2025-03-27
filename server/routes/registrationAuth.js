@@ -23,7 +23,7 @@ router.post("/", validateRegistration, async (req, res) => {
         // Create a new user
         const newUser = new User({
             userName,
-            userEmployeeId,  // Ensure this field is mapped correctly
+            userEmployeeId,
             userRole,
             userPassword: hashedPassword,
         });
