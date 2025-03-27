@@ -50,29 +50,35 @@ const Header = () => {
     ];
 
     return (
-        <>
-            <button onClick={() => setHeaderVisible(!headerVisible)} className="toggle-header-button">
-                {headerVisible ? 'Hide Header' : 'Show Header'}
-            </button>
-            {headerVisible && (
-                <header>
-                    <div className="logo-container">
-                        <img src={logo} alt="Dashboard" className="logo" />
-                    </div>
-                    <nav>
-                        <ul>
-                            {navLinks.map(link =>
-                                userRole && link.roles.includes(userRole) ? (
-                                    <li key={link.path}>
-                                        <Link to={link.path}>{link.label}</Link>
-                                    </li>
-                                ) : null
-                            )}
-                        </ul>
-                    </nav>
-                </header>
+        <header>
+            <div className="logo-container">
+                <img src={logo} alt="Dashboard" className="logo" />
+                {/* Hamburger Button */}
+                <button
+                    className="hamburger-button"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    ☰
+                </button>
+            </div>
+
+            {/* Conditionally Render Navigation */}
+            {menuOpen && (
+                <nav>
+                    <ul>
+                        {navLinks.map(link =>
+                            userRole && link.roles.includes(userRole) ? (
+                                <li key={link.path}>
+                                    <Link to={link.path} onClick={() => setMenuOpen(false)}>
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ) : null
+                        )}
+                    </ul>
+                </nav>
             )}
-        </>
+        </header>
     );
 };
 
