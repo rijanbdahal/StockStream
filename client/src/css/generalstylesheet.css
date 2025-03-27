@@ -20,9 +20,7 @@ body {
     padding-top: 80px; /* Offset for fixed header */
 }
 
-/* ==============================
-   ✅ Fixed & Styled Header
-================================ */
+/* Sidebar Styles */
 header {
     background-color: #000;
     color: white;
@@ -46,9 +44,12 @@ header.open {
     left: 0;
 }
 
+/* Logo Container */
 .logo-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
     margin-bottom: 30px;
 }
 
@@ -57,17 +58,26 @@ header.open {
     width: auto;
 }
 
+/* Close Button */
 .close-sidebar-button {
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     cursor: pointer;
     position: absolute;
     top: 15px;
     right: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 
+.close-sidebar-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Styles */
 nav {
     width: 100%;
 }
@@ -98,26 +108,34 @@ nav ul li a.active {
     color: #F55139;
 }
 
+/* Hamburger Button */
 .hamburger-button {
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
     position: fixed;
     top: 15px;
     left: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
     z-index: 1100;
-    transition: transform 0.2s;
+    transition: background 0.3s, transform 0.2s;
 }
 
+.hamburger-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     header {
         width: 70%;
     }
 
     .hamburger-button {
-        font-size: 22px;
+        font-size: 24px;
         left: 10px;
     }
 }
