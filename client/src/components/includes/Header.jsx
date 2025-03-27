@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import logo from './logo/logo.jpg';
-import '../../css/generalstylesheet.css';
+import '../../css/header.css';
 
 const Header = () => {
     const [userRole, setUserRole] = useState(null);
@@ -13,7 +13,7 @@ const Header = () => {
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
         if (!authToken) {
-            navigate('/login'); // Redirect to login if no token
+            navigate('/login');
             return;
         }
 
@@ -50,28 +50,17 @@ const Header = () => {
     ];
 
     return (
-        <header>
-            <div className="header-container">
+        <>
+            <button className="hamburger-button" onClick={() => setMenuOpen(true)}>☰</button>
+
+            <header className={menuOpen ? "open" : ""}>
+                <button className="close-sidebar-button" onClick={() => setMenuOpen(false)}>✖</button>
+
                 <div className="logo-container">
                     <img src={logo} alt="Dashboard" className="logo" />
                 </div>
 
-                <button
-                    className="hamburger-button"
-                    onClick={() => setMenuOpen(!menuOpen)}
-                >
-                    ☰
-                </button>
-            </div>
-
-            {menuOpen && (
-                <nav className="mobile-menu">
-                    <button
-                        className="close-menu-button"
-                        onClick={() => setMenuOpen(false)}
-                    >
-                        ✖
-                    </button>
+                <nav>
                     <ul>
                         {navLinks.map(link =>
                             userRole && link.roles.includes(userRole) ? (
@@ -84,8 +73,8 @@ const Header = () => {
                         )}
                     </ul>
                 </nav>
-            )}
-        </header>
+            </header>
+        </>
     );
 };
 
