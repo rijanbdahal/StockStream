@@ -124,7 +124,7 @@ const QueryDockingEntry = () => {
                     </table>
                 </div>
             )}
-            <a href="./dockingentry"> Fill Docking Entry </a>
+            <a href="/#/dockingentry"> Fill Docking Entry </a>
         </div>
 
     );
