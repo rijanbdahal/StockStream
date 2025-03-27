@@ -205,7 +205,7 @@ const DockingEntry = () => {
                         <input type="datetime-local" value={arrivalTime} readOnly />
                     </div>
                     <button type="submit">Submit</button>
-                    <a href="/client/src/employee/docker/QueryDockingEntry">Query Docking Entry</a>
+                    <a href="/querydockingentry">Query Docking Entry</a>
                 </form>
 
             </div>
