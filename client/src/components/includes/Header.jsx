@@ -51,29 +51,33 @@ const Header = () => {
 
     return (
         <>
-            <button className="hamburger-button" onClick={() => setMenuOpen(true)}>☰</button>
+            {!menuOpen&&(
+                <button className="hamburger-button" onClick={() => setMenuOpen(true)}>☰</button>
 
-            <header className={menuOpen ? "open" : ""}>
-                <button className="close-sidebar-button" onClick={() => setMenuOpen(false)}>✖</button>
+            )}
+            {menuOpen(
+                <header className={menuOpen ? "open" : ""}>
+                    <button className="close-sidebar-button" onClick={() => setMenuOpen(false)}>✖</button>
 
-                <div className="logo-container">
-                    <img src={logo} alt="Dashboard" className="logo" />
-                </div>
+                    <div className="logo-container">
+                        <img src={logo} alt="Dashboard" className="logo" />
+                    </div>
 
-                <nav>
-                    <ul>
-                        {navLinks.map(link =>
-                            userRole && link.roles.includes(userRole) ? (
-                                <li key={link.path}>
-                                    <Link to={link.path} onClick={() => setMenuOpen(false)}>
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ) : null
-                        )}
-                    </ul>
-                </nav>
-            </header>
+                    <nav>
+                        <ul>
+                            {navLinks.map(link =>
+                                userRole && link.roles.includes(userRole) ? (
+                                    <li key={link.path}>
+                                        <Link to={link.path} onClick={() => setMenuOpen(false)}>
+                                            {link.label}
+                                        </Link>
+                                    </li>
+                                ) : null
+                            )}
+                        </ul>
+                    </nav>
+                </header>
+            )}
         </>
     );
 };
