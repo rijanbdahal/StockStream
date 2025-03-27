@@ -53,7 +53,6 @@ const Header = () => {
         <header>
             <div className="logo-container">
                 <img src={logo} alt="Dashboard" className="logo" />
-                {/* Hamburger Button */}
                 <button
                     className="hamburger-button"
                     onClick={() => setMenuOpen(!menuOpen)}
