@@ -55,7 +55,7 @@ const Header = () => {
                 <button className="hamburger-button" onClick={() => setMenuOpen(true)}>☰</button>
 
             )}
-            {menuOpen&&(
+
                 <header className={menuOpen ? "open" : ""}>
                     <button className="close-sidebar-button" onClick={() => setMenuOpen(false)}>✖</button>
 
@@ -77,7 +77,7 @@ const Header = () => {
                         </ul>
                     </nav>
                 </header>
-            )}
+
         </>
     );
 };
