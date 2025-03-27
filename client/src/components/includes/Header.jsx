@@ -8,7 +8,7 @@ const Header = () => {
     const [userRole, setUserRole] = useState(null);
     const navigate = useNavigate();
     const API_URL = process.env.REACT_APP_API_URL ;
-    const [headerVisible, setHeaderVisible] = useState(true);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         const authToken = localStorage.getItem('authToken');
