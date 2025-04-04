@@ -38,7 +38,7 @@ const Header = () => {
         { path: "/querydockingentry", label: "Query Docking Entry", roles: ["Admin", "Docker","Supervisor"] },
         { path: "/receivingtask", label: "Receiving", roles: ["Admin", "Receiver"] },
         { path: "/putaway", label: "Putaway", roles: ["Admin", "RTO"] },
-        { path: "/replenishtask", label: "Replenish", roles: ["RTO"] },
+        { path: "/replenishtask", label: "Replenish", roles: ["RTO","Admin"] },
         { path: "/selectingtaskdetails", label: "Selection", roles: ["Admin", "Selector"] },
         { path: "/assignsingleproductlocation", label: "Assign Location", roles: ["Admin", "Supervisor"] },
         { path: "/releasepickingtask", label: "Release Picking Task", roles: ["Admin", "Supervisor"] },
