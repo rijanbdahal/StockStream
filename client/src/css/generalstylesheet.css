@@ -20,9 +20,533 @@ body {
     padding-top: 80px; /* Offset for fixed header */
 }
 
+/* Sidebar Styles */
+header {
+    background-color: #000;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    z-index: 1000;
+    box-shadow: 6px 0px 12px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    max-height: 100vh;
+    transition: left 0.3s ease-in-out;
+}
+
+header.open {
+    left: 0;
+}
+
+/* Logo Container */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+}
+
+/* Close Button */
+.close-sidebar-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.close-sidebar-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #F55139;
+}
+
+/* Hamburger Button */
+.hamburger-button {
+    background: #555555;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1100;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.hamburger-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    header {
+        width: 70%;
+    }
+
+    .hamburger-button {
+        font-size: 24px;
+        left: 10px;
+    }
+}
+
+
+main {
+    margin-left: 250px;
+    padding: 20px;
+}
+
 /* ==============================
-   ✅ Table Styles (For QueryDockingEntry)
+   ✅ Main Page Containers (Perfectly Centered)
 ================================ */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Apply to Specific Pages */
+.userInfo-container,
+.selecting-task-container,
+.assign-product-location-container,
+.docking-entry-query,
+.release-task-container,
+.receiving-task-container,
+.putaway-page,
+.replenish-task-page,
+.profile-container,
+.login-container,
+.registration-container {
+    @extend .container;
+}
+
+/* ==============================
+   ✅ Typography Styling
+================================ */
+h1, h2, h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #F55139;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #000;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+/* ==============================
+   ✅ Form Styling (Consistent Layout)
+================================ */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Form Group (Perfectly Spaced) */
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* ✅ Label Styling */
+label {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* ✅ Input Fields */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+input:focus,
+select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+/* ==============================
+   ✅ Buttons (Centrally Positioned)
+================================ */
+button {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    background: linear-gradient(135deg, #F55139, #e04e2e);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    align-self: center;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #e04e2e, #F55139);
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   ✅ Message Styling (Centered & Aligned)
+================================ */
+.error, .success, .loading {
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.error {
+    color: #e74c3c;
+    background: #f8d7da;
+}
+
+.success {
+    color: #27ae60;
+    background: #d4edda;
+}
+
+.loading {
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* ==============================
+   ✅ Selecting Task Pick Page Styling
+================================ */
+.itemDetails {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.itemDetails label {
+    display: block;
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.userInput {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.userInput .form-group {
+    margin-bottom: 15px;
+}
+
+.userInput .form-group label {
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 5px;
+}
+
+.userInput .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.userInput .form-group input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.submit-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    background: linear-gradient(135deg, #F55139, #e04e2e);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    align-self: center;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #e04e2e, #F55139);
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   ✅ Location Styling
+================================ */
+.location-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.location-container p {
+    font-size: 18px;
+    color: #333;
+    margin: 8px 0;
+    text-align: center;
+}
+
+.location-container p:first-child {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* ==============================
+   ✅ Loading State Styling
+================================ */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loading-container .spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+.loading-container .loading {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==============================
+   ✅ Responsive Design (Optimized)
+================================ */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    form {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input, select {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
+.qr-scanner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for background blur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    z-index: 9999;
+}
+
+.qr-video {
+    width: 80%;
+    max-width: 400px;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+    background: darkred;
+}
+
+/* Adjust button styling */
+.scan-btn {
+    background: #003d94;
+    color: white;
+    padding: 10px 20px; /* Slightly increased padding */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center; /* Vertically centers the button with the input */
+    margin-left: 10px; /* Adds space between the input and button */
+}
+
+.scan-btn:hover {
+    background: #002b66;
+}
+/* Container specific to docking entry table */
 .docking-entry-container {
     margin: 20px auto;
     padding: 15px;
@@ -84,74 +608,4 @@ body {
 .docking-entry-container a:hover {
     background:linear-gradient(135deg, #e04e2e, #F55139);
     color: white;
-}
-
-/* ==============================
-   ✅ Message Styling (Centered & Aligned)
-================================ */
-.error, .success, .loading {
-    font-size: 1.1rem;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    width: 100%;
-    max-width: 500px;
-    margin: 10px auto;
-}
-
-.error {
-    color: #e74c3c;
-    background: #f8d7da;
-}
-
-.success {
-    color: #27ae60;
-    background: #d4edda;
-}
-
-.loading {
-    color: #3498db;
-    font-weight: bold;
-}
-
-/* ==============================
-   ✅ Global Link Styles
-================================ */
-a {
-    color: #2196f3;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #F55139;
-}
-
-/* ==============================
-   ✅ Main Page Containers (Perfectly Centered)
-================================ */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Apply to Specific Pages */
-.userInfo-container,
-.selecting-task-container,
-.assign-product-location-container,
-.docking-entry-query,
-.release-task-container,
-.receiving-task-container,
-.putaway-page,
-.replenish-task-page,
-.profile-container,
-.login-container,
-.registration-container {
-    @extend .container;
 }
