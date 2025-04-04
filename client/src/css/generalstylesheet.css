@@ -110,9 +110,9 @@ nav ul li a.active {
 
 /* Hamburger Button */
 .hamburger-button {
-    background: #555555;
+    background: #f4f6f9;
     border: none;
-    color: #555555;
+    color: #f4f6f9;
     font-size: 26px;
     cursor: pointer;
     position: fixed;
