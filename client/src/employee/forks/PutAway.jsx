@@ -76,10 +76,10 @@ const PutAway = () => {
             setAssignedLocation('');
             setMessage('Error fetching location: ' + (err.response?.data?.msg || 'Unknown error.'));
         } finally {
-            setIsLoading(false); // End loading
+            setIsLoading(false);
         }
 
-        setPalletID(''); // Reset pallet ID input
+        setPalletID('');
     };
 
     const handleLocationVerify = async (e) => {

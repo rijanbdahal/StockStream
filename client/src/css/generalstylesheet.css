@@ -546,3 +546,66 @@ button:hover {
 .scan-btn:hover {
     background: #002b66;
 }
+/* Container specific to docking entry table */
+.docking-entry-container {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #e9f7ef;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Styling the table specific to docking entry */
+.docking-entry-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.docking-entry-container th,
+.docking-entry-container td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Styling for table headers */
+.docking-entry-container th {
+    background: linear-gradient(135deg, #e04e2e, #F55139);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Styling for table cells */
+.docking-entry-container td {
+    font-size: 14px;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+/* Hover effect for table rows */
+.docking-entry-container tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling the 'Fill Docking Entry' link */
+.docking-entry-container a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #2196f3;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #2196f3;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for the link */
+.docking-entry-container a:hover {
+    background:linear-gradient(135deg, #e04e2e, #F55139);
+    color: white;
+}
