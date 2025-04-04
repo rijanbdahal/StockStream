@@ -110,9 +110,9 @@ nav ul li a.active {
 
 /* Hamburger Button */
 .hamburger-button {
-    background: #f4f6f9;
+    background: #555555;
     border: none;
-    color: #f4f6f9;
+    color: #555555;
     font-size: 26px;
     cursor: pointer;
     position: fixed;
@@ -125,7 +125,7 @@ nav ul li a.active {
 }
 
 .hamburger-button:hover {
-    background: #f4f6f9;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Mobile Responsiveness */
