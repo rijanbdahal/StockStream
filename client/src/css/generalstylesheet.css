@@ -110,7 +110,7 @@ nav ul li a.active {
 
 /* Hamburger Button */
 .hamburger-button {
-    background: #555555;
+    background: white;
     border: none;
     color: white;
     font-size: 26px;
@@ -125,7 +125,7 @@ nav ul li a.active {
 }
 
 .hamburger-button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: white;
 }
 
 /* Mobile Responsiveness */
