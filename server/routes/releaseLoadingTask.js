@@ -8,9 +8,6 @@ const StagingOrder = require("../models/stagingOrder");
 router.get('/getOrders', async (req, res) => {
 
     try {
-
-
-
         const pickingOrder = await PickingOrder.find({completedStatus: true,isShipped:false}).sort({toBeFulfilledBy: -1});
         return res.status(200).json(pickingOrder);
 

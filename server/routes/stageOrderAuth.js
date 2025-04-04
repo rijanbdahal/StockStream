@@ -10,7 +10,7 @@ router.get("/:taskId", async (req, res) => {
         const { taskId } = req.params;
         console.log(taskId);
 
-        const stagingOrder = await StagingOrder.findOne({ shippingId:taskId }); // Populate locationId with details
+        const stagingOrder = await StagingOrder.findOne({ shippingId:taskId });
         if (!stagingOrder) {
             return res.status(404).json({ message: "No such task found" });
         }

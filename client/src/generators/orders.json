@@ -1,0 +1,3266 @@
+[
+  {
+    "_id": "67ef523cb9120f94f0da2672",
+    "orderNumber": 45344,
+    "storeNumber": 567,
+    "totalCases": 103,
+    "totalStop": 3,
+    "placedAt": "2025-03-28T17:51:40.657Z",
+    "toBeFulfilledBy": "2025-04-10T11:04:36.984Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1001,
+        "quantity": 31,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1009,
+        "quantity": 1,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 80,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 6,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 58,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2673",
+    "orderNumber": 45345,
+    "storeNumber": 568,
+    "totalCases": 79,
+    "totalStop": 3,
+    "placedAt": "2025-03-31T10:45:24.661Z",
+    "toBeFulfilledBy": "2025-04-08T00:41:55.646Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 75,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 74,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1009,
+        "quantity": 60,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 81,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2674",
+    "orderNumber": 45346,
+    "storeNumber": 569,
+    "totalCases": 97,
+    "totalStop": 3,
+    "placedAt": "2025-03-29T12:20:50.326Z",
+    "toBeFulfilledBy": "2025-04-04T23:28:48.269Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1011,
+        "quantity": 95,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2675",
+    "orderNumber": 45347,
+    "storeNumber": 570,
+    "totalCases": 79,
+    "totalStop": 1,
+    "placedAt": "2025-03-28T02:14:15.579Z",
+    "toBeFulfilledBy": "2025-04-07T15:51:30.580Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1016,
+        "quantity": 13,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 47,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2676",
+    "orderNumber": 45348,
+    "storeNumber": 571,
+    "totalCases": 50,
+    "totalStop": 2,
+    "placedAt": "2025-03-27T07:46:50.899Z",
+    "toBeFulfilledBy": "2025-04-13T04:36:34.909Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1005,
+        "quantity": 62,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2677",
+    "orderNumber": 45349,
+    "storeNumber": 572,
+    "totalCases": 52,
+    "totalStop": 1,
+    "placedAt": "2025-04-04T00:17:06.364Z",
+    "toBeFulfilledBy": "2025-04-08T02:55:22.264Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1017,
+        "quantity": 36,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2678",
+    "orderNumber": 45350,
+    "storeNumber": 573,
+    "totalCases": 58,
+    "totalStop": 3,
+    "placedAt": "2025-04-01T16:39:39.704Z",
+    "toBeFulfilledBy": "2025-04-15T09:23:01.281Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 45,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 21,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2679",
+    "orderNumber": 45351,
+    "storeNumber": 574,
+    "totalCases": 139,
+    "totalStop": 2,
+    "placedAt": "2025-03-24T15:33:00.133Z",
+    "toBeFulfilledBy": "2025-04-06T20:59:28.796Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1011,
+        "quantity": 87,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da267a",
+    "orderNumber": 45352,
+    "storeNumber": 575,
+    "totalCases": 146,
+    "totalStop": 3,
+    "placedAt": "2025-03-25T03:24:18.788Z",
+    "toBeFulfilledBy": "2025-04-08T23:05:08.101Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 96,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da267b",
+    "orderNumber": 45353,
+    "storeNumber": 576,
+    "totalCases": 94,
+    "totalStop": 2,
+    "placedAt": "2025-03-24T06:07:08.452Z",
+    "toBeFulfilledBy": "2025-04-13T01:56:29.793Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1008,
+        "quantity": 80,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1008,
+        "quantity": 50,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1005,
+        "quantity": 79,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1005,
+        "quantity": 24,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da267c",
+    "orderNumber": 45354,
+    "storeNumber": 567,
+    "totalCases": 115,
+    "totalStop": 2,
+    "placedAt": "2025-04-03T05:06:57.795Z",
+    "toBeFulfilledBy": "2025-04-12T04:48:38.360Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1004,
+        "quantity": 40,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da267d",
+    "orderNumber": 45355,
+    "storeNumber": 568,
+    "totalCases": 53,
+    "totalStop": 2,
+    "placedAt": "2025-03-29T09:46:28.590Z",
+    "toBeFulfilledBy": "2025-04-07T15:19:55.845Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1016,
+        "quantity": 31,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1010,
+        "quantity": 56,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 69,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 26,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1001,
+        "quantity": 83,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da267e",
+    "orderNumber": 45356,
+    "storeNumber": 569,
+    "totalCases": 110,
+    "totalStop": 2,
+    "placedAt": "2025-03-29T08:22:24.772Z",
+    "toBeFulfilledBy": "2025-04-11T12:46:20.146Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 7,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 57,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1008,
+        "quantity": 69,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 90,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da267f",
+    "orderNumber": 45357,
+    "storeNumber": 570,
+    "totalCases": 143,
+    "totalStop": 1,
+    "placedAt": "2025-04-01T01:38:02.072Z",
+    "toBeFulfilledBy": "2025-04-15T14:54:21.761Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 41,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 65,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2680",
+    "orderNumber": 45358,
+    "storeNumber": 571,
+    "totalCases": 65,
+    "totalStop": 2,
+    "placedAt": "2025-03-28T10:31:35.542Z",
+    "toBeFulfilledBy": "2025-04-12T18:34:38.024Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1013,
+        "quantity": 44,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1011,
+        "quantity": 73,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1003,
+        "quantity": 46,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 72,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2681",
+    "orderNumber": 45359,
+    "storeNumber": 572,
+    "totalCases": 147,
+    "totalStop": 1,
+    "placedAt": "2025-04-02T20:48:07.322Z",
+    "toBeFulfilledBy": "2025-04-15T10:54:28.692Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1010,
+        "quantity": 29,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 90,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1011,
+        "quantity": 5,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1009,
+        "quantity": 82,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2682",
+    "orderNumber": 45360,
+    "storeNumber": 573,
+    "totalCases": 67,
+    "totalStop": 3,
+    "placedAt": "2025-03-30T10:42:28.699Z",
+    "toBeFulfilledBy": "2025-04-15T14:37:44.048Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1005,
+        "quantity": 76,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1018,
+        "quantity": 13,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1000,
+        "quantity": 55,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1001,
+        "quantity": 27,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 9,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2683",
+    "orderNumber": 45361,
+    "storeNumber": 574,
+    "totalCases": 105,
+    "totalStop": 1,
+    "placedAt": "2025-03-25T00:18:12.537Z",
+    "toBeFulfilledBy": "2025-04-10T01:25:02.243Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 76,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 1,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1018,
+        "quantity": 15,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1010,
+        "quantity": 25,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 16,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2684",
+    "orderNumber": 45362,
+    "storeNumber": 575,
+    "totalCases": 114,
+    "totalStop": 2,
+    "placedAt": "2025-03-28T15:35:37.277Z",
+    "toBeFulfilledBy": "2025-04-10T07:01:09.141Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1016,
+        "quantity": 94,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 36,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2685",
+    "orderNumber": 45363,
+    "storeNumber": 576,
+    "totalCases": 112,
+    "totalStop": 1,
+    "placedAt": "2025-03-31T08:17:27.984Z",
+    "toBeFulfilledBy": "2025-04-10T10:14:47.052Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1016,
+        "quantity": 3,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 27,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2686",
+    "orderNumber": 45364,
+    "storeNumber": 567,
+    "totalCases": 133,
+    "totalStop": 1,
+    "placedAt": "2025-04-02T10:49:02.882Z",
+    "toBeFulfilledBy": "2025-04-11T08:41:13.802Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1003,
+        "quantity": 51,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1004,
+        "quantity": 54,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 49,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1019,
+        "quantity": 93,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2687",
+    "orderNumber": 45365,
+    "storeNumber": 568,
+    "totalCases": 100,
+    "totalStop": 1,
+    "placedAt": "2025-03-25T22:52:18.773Z",
+    "toBeFulfilledBy": "2025-04-13T05:30:19.676Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1003,
+        "quantity": 5,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 20,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2688",
+    "orderNumber": 45366,
+    "storeNumber": 569,
+    "totalCases": 106,
+    "totalStop": 3,
+    "placedAt": "2025-03-25T17:43:37.887Z",
+    "toBeFulfilledBy": "2025-04-05T12:49:34.119Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1019,
+        "quantity": 83,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1000,
+        "quantity": 43,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2689",
+    "orderNumber": 45367,
+    "storeNumber": 570,
+    "totalCases": 114,
+    "totalStop": 2,
+    "placedAt": "2025-03-31T10:48:25.790Z",
+    "toBeFulfilledBy": "2025-04-11T14:17:07.967Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1006,
+        "quantity": 9,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 5,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1019,
+        "quantity": 12,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da268a",
+    "orderNumber": 45368,
+    "storeNumber": 571,
+    "totalCases": 98,
+    "totalStop": 1,
+    "placedAt": "2025-03-27T20:25:30.803Z",
+    "toBeFulfilledBy": "2025-04-15T15:41:35.179Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1002,
+        "quantity": 53,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1018,
+        "quantity": 56,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 59,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1017,
+        "quantity": 96,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da268b",
+    "orderNumber": 45369,
+    "storeNumber": 572,
+    "totalCases": 142,
+    "totalStop": 1,
+    "placedAt": "2025-04-03T23:05:07.792Z",
+    "toBeFulfilledBy": "2025-04-05T18:37:17.614Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1019,
+        "quantity": 16,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1017,
+        "quantity": 2,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da268c",
+    "orderNumber": 45370,
+    "storeNumber": 573,
+    "totalCases": 113,
+    "totalStop": 1,
+    "placedAt": "2025-03-27T20:13:57.662Z",
+    "toBeFulfilledBy": "2025-04-08T05:37:37.329Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1018,
+        "quantity": 68,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1005,
+        "quantity": 6,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 53,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 12,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1005,
+        "quantity": 35,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da268d",
+    "orderNumber": 45371,
+    "storeNumber": 574,
+    "totalCases": 128,
+    "totalStop": 3,
+    "placedAt": "2025-03-24T19:29:03.709Z",
+    "toBeFulfilledBy": "2025-04-09T10:38:10.099Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 93,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1000,
+        "quantity": 17,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1017,
+        "quantity": 49,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da268e",
+    "orderNumber": 45372,
+    "storeNumber": 575,
+    "totalCases": 50,
+    "totalStop": 2,
+    "placedAt": "2025-04-01T16:15:47.417Z",
+    "toBeFulfilledBy": "2025-04-08T23:20:44.073Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 23,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da268f",
+    "orderNumber": 45373,
+    "storeNumber": 576,
+    "totalCases": 89,
+    "totalStop": 3,
+    "placedAt": "2025-04-03T23:18:54.290Z",
+    "toBeFulfilledBy": "2025-04-14T10:20:40.352Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1013,
+        "quantity": 99,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 10,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1019,
+        "quantity": 53,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 51,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2690",
+    "orderNumber": 45374,
+    "storeNumber": 567,
+    "totalCases": 112,
+    "totalStop": 1,
+    "placedAt": "2025-03-29T01:00:19.338Z",
+    "toBeFulfilledBy": "2025-04-15T03:04:26.094Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1012,
+        "quantity": 75,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1001,
+        "quantity": 44,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 10,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 66,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2691",
+    "orderNumber": 45375,
+    "storeNumber": 568,
+    "totalCases": 53,
+    "totalStop": 2,
+    "placedAt": "2025-03-27T13:41:40.487Z",
+    "toBeFulfilledBy": "2025-04-13T16:01:50.664Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1005,
+        "quantity": 69,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 81,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1008,
+        "quantity": 67,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1011,
+        "quantity": 85,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1003,
+        "quantity": 32,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2692",
+    "orderNumber": 45376,
+    "storeNumber": 569,
+    "totalCases": 66,
+    "totalStop": 2,
+    "placedAt": "2025-04-01T21:11:26.859Z",
+    "toBeFulfilledBy": "2025-04-05T03:45:20.404Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 12,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2693",
+    "orderNumber": 45377,
+    "storeNumber": 570,
+    "totalCases": 80,
+    "totalStop": 2,
+    "placedAt": "2025-04-01T22:47:04.351Z",
+    "toBeFulfilledBy": "2025-04-04T21:14:33.778Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1015,
+        "quantity": 78,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1018,
+        "quantity": 84,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2694",
+    "orderNumber": 45378,
+    "storeNumber": 571,
+    "totalCases": 98,
+    "totalStop": 1,
+    "placedAt": "2025-04-02T23:55:55.664Z",
+    "toBeFulfilledBy": "2025-04-15T09:48:40.459Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1014,
+        "quantity": 66,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2695",
+    "orderNumber": 45379,
+    "storeNumber": 572,
+    "totalCases": 129,
+    "totalStop": 1,
+    "placedAt": "2025-03-23T23:05:47.355Z",
+    "toBeFulfilledBy": "2025-04-13T03:03:12.438Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1011,
+        "quantity": 6,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1000,
+        "quantity": 21,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 12,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 97,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 37,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2696",
+    "orderNumber": 45380,
+    "storeNumber": 573,
+    "totalCases": 50,
+    "totalStop": 2,
+    "placedAt": "2025-03-24T07:30:14.292Z",
+    "toBeFulfilledBy": "2025-04-06T21:14:41.228Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1008,
+        "quantity": 66,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 35,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1004,
+        "quantity": 22,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 20,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 91,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2697",
+    "orderNumber": 45381,
+    "storeNumber": 574,
+    "totalCases": 121,
+    "totalStop": 2,
+    "placedAt": "2025-03-28T16:57:59.169Z",
+    "toBeFulfilledBy": "2025-04-08T13:49:10.843Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1018,
+        "quantity": 5,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1005,
+        "quantity": 87,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2698",
+    "orderNumber": 45382,
+    "storeNumber": 575,
+    "totalCases": 89,
+    "totalStop": 2,
+    "placedAt": "2025-03-24T22:57:31.977Z",
+    "toBeFulfilledBy": "2025-04-05T15:48:29.050Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1018,
+        "quantity": 74,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1005,
+        "quantity": 97,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 27,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1019,
+        "quantity": 47,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 86,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da2699",
+    "orderNumber": 45383,
+    "storeNumber": 576,
+    "totalCases": 91,
+    "totalStop": 2,
+    "placedAt": "2025-03-29T13:02:29.924Z",
+    "toBeFulfilledBy": "2025-04-11T09:17:46.602Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1001,
+        "quantity": 81,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1008,
+        "quantity": 47,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1001,
+        "quantity": 1,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da269a",
+    "orderNumber": 45384,
+    "storeNumber": 567,
+    "totalCases": 107,
+    "totalStop": 1,
+    "placedAt": "2025-04-03T08:59:58.931Z",
+    "toBeFulfilledBy": "2025-04-14T15:08:51.021Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1013,
+        "quantity": 49,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1010,
+        "quantity": 77,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 53,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da269b",
+    "orderNumber": 45385,
+    "storeNumber": 568,
+    "totalCases": 60,
+    "totalStop": 2,
+    "placedAt": "2025-03-25T11:28:03.309Z",
+    "toBeFulfilledBy": "2025-04-09T22:38:22.124Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1010,
+        "quantity": 47,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1008,
+        "quantity": 70,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1001,
+        "quantity": 70,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da269c",
+    "orderNumber": 45386,
+    "storeNumber": 569,
+    "totalCases": 97,
+    "totalStop": 2,
+    "placedAt": "2025-03-28T03:20:06.587Z",
+    "toBeFulfilledBy": "2025-04-10T08:31:17.087Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1016,
+        "quantity": 86,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1005,
+        "quantity": 66,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da269d",
+    "orderNumber": 45387,
+    "storeNumber": 570,
+    "totalCases": 75,
+    "totalStop": 2,
+    "placedAt": "2025-03-26T21:09:39.479Z",
+    "toBeFulfilledBy": "2025-04-09T19:37:40.685Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1008,
+        "quantity": 22,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da269e",
+    "orderNumber": 45388,
+    "storeNumber": 571,
+    "totalCases": 134,
+    "totalStop": 3,
+    "placedAt": "2025-03-30T06:14:15.508Z",
+    "toBeFulfilledBy": "2025-04-10T15:52:14.360Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 8,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da269f",
+    "orderNumber": 45389,
+    "storeNumber": 572,
+    "totalCases": 110,
+    "totalStop": 2,
+    "placedAt": "2025-04-01T03:42:26.239Z",
+    "toBeFulfilledBy": "2025-04-12T23:39:21.557Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1001,
+        "quantity": 32,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1017,
+        "quantity": 14,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 8,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a0",
+    "orderNumber": 45390,
+    "storeNumber": 573,
+    "totalCases": 99,
+    "totalStop": 3,
+    "placedAt": "2025-03-27T18:23:28.068Z",
+    "toBeFulfilledBy": "2025-04-12T11:08:09.591Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1015,
+        "quantity": 12,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 11,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1004,
+        "quantity": 73,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a1",
+    "orderNumber": 45391,
+    "storeNumber": 574,
+    "totalCases": 73,
+    "totalStop": 2,
+    "placedAt": "2025-03-26T07:47:14.193Z",
+    "toBeFulfilledBy": "2025-04-07T00:44:09.571Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1006,
+        "quantity": 5,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 87,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 54,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 43,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a2",
+    "orderNumber": 45392,
+    "storeNumber": 575,
+    "totalCases": 91,
+    "totalStop": 2,
+    "placedAt": "2025-04-03T20:45:30.012Z",
+    "toBeFulfilledBy": "2025-04-11T19:49:35.220Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1015,
+        "quantity": 92,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 68,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 79,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1000,
+        "quantity": 41,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a3",
+    "orderNumber": 45393,
+    "storeNumber": 576,
+    "totalCases": 75,
+    "totalStop": 2,
+    "placedAt": "2025-04-03T08:42:35.073Z",
+    "toBeFulfilledBy": "2025-04-11T06:25:48.620Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1012,
+        "quantity": 70,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a4",
+    "orderNumber": 45394,
+    "storeNumber": 567,
+    "totalCases": 54,
+    "totalStop": 2,
+    "placedAt": "2025-03-29T12:47:29.739Z",
+    "toBeFulfilledBy": "2025-04-11T18:40:37.179Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1002,
+        "quantity": 87,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1009,
+        "quantity": 18,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1017,
+        "quantity": 41,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a5",
+    "orderNumber": 45395,
+    "storeNumber": 568,
+    "totalCases": 65,
+    "totalStop": 3,
+    "placedAt": "2025-03-24T13:02:55.107Z",
+    "toBeFulfilledBy": "2025-04-06T23:12:35.270Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1010,
+        "quantity": 52,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1003,
+        "quantity": 19,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1001,
+        "quantity": 30,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a6",
+    "orderNumber": 45396,
+    "storeNumber": 569,
+    "totalCases": 95,
+    "totalStop": 2,
+    "placedAt": "2025-04-02T00:58:19.875Z",
+    "toBeFulfilledBy": "2025-04-04T14:33:30.019Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1011,
+        "quantity": 55,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 16,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1008,
+        "quantity": 50,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a7",
+    "orderNumber": 45397,
+    "storeNumber": 570,
+    "totalCases": 95,
+    "totalStop": 2,
+    "placedAt": "2025-04-03T06:58:44.112Z",
+    "toBeFulfilledBy": "2025-04-14T21:22:43.682Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1006,
+        "quantity": 9,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 13,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a8",
+    "orderNumber": 45398,
+    "storeNumber": 571,
+    "totalCases": 64,
+    "totalStop": 1,
+    "placedAt": "2025-03-31T05:34:05.110Z",
+    "toBeFulfilledBy": "2025-04-09T18:45:23.908Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1014,
+        "quantity": 35,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1009,
+        "quantity": 39,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1004,
+        "quantity": 35,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1003,
+        "quantity": 94,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26a9",
+    "orderNumber": 45399,
+    "storeNumber": 572,
+    "totalCases": 117,
+    "totalStop": 3,
+    "placedAt": "2025-03-27T12:33:28.179Z",
+    "toBeFulfilledBy": "2025-04-08T08:14:21.053Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1013,
+        "quantity": 31,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1018,
+        "quantity": 24,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1011,
+        "quantity": 65,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1003,
+        "quantity": 19,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26aa",
+    "orderNumber": 45400,
+    "storeNumber": 573,
+    "totalCases": 93,
+    "totalStop": 1,
+    "placedAt": "2025-04-01T00:29:06.510Z",
+    "toBeFulfilledBy": "2025-04-10T12:22:56.086Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1014,
+        "quantity": 46,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 16,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 33,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1011,
+        "quantity": 73,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26ab",
+    "orderNumber": 45401,
+    "storeNumber": 574,
+    "totalCases": 99,
+    "totalStop": 3,
+    "placedAt": "2025-03-30T10:35:01.295Z",
+    "toBeFulfilledBy": "2025-04-05T07:52:45.839Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 29,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1018,
+        "quantity": 91,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 92,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26ac",
+    "orderNumber": 45402,
+    "storeNumber": 575,
+    "totalCases": 79,
+    "totalStop": 1,
+    "placedAt": "2025-03-26T12:47:25.004Z",
+    "toBeFulfilledBy": "2025-04-11T15:41:47.912Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1004,
+        "quantity": 4,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 75,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 90,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1004,
+        "quantity": 72,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26ad",
+    "orderNumber": 45403,
+    "storeNumber": 576,
+    "totalCases": 113,
+    "totalStop": 1,
+    "placedAt": "2025-03-25T03:05:11.357Z",
+    "toBeFulfilledBy": "2025-04-13T03:33:42.203Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1018,
+        "quantity": 15,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 70,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 54,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26ae",
+    "orderNumber": 45404,
+    "storeNumber": 567,
+    "totalCases": 146,
+    "totalStop": 2,
+    "placedAt": "2025-03-29T00:36:49.795Z",
+    "toBeFulfilledBy": "2025-04-10T05:00:49.344Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 77,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 74,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26af",
+    "orderNumber": 45405,
+    "storeNumber": 568,
+    "totalCases": 52,
+    "totalStop": 1,
+    "placedAt": "2025-03-31T03:14:28.050Z",
+    "toBeFulfilledBy": "2025-04-10T04:15:32.820Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1011,
+        "quantity": 42,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b0",
+    "orderNumber": 45406,
+    "storeNumber": 569,
+    "totalCases": 62,
+    "totalStop": 1,
+    "placedAt": "2025-03-30T23:24:31.839Z",
+    "toBeFulfilledBy": "2025-04-11T12:25:01.862Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1010,
+        "quantity": 83,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1005,
+        "quantity": 94,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1003,
+        "quantity": 39,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1010,
+        "quantity": 44,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b1",
+    "orderNumber": 45407,
+    "storeNumber": 570,
+    "totalCases": 93,
+    "totalStop": 2,
+    "placedAt": "2025-03-29T17:17:49.303Z",
+    "toBeFulfilledBy": "2025-04-07T13:11:35.955Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1005,
+        "quantity": 1,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 56,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1009,
+        "quantity": 42,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 4,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b2",
+    "orderNumber": 45408,
+    "storeNumber": 571,
+    "totalCases": 74,
+    "totalStop": 1,
+    "placedAt": "2025-03-29T21:58:05.014Z",
+    "toBeFulfilledBy": "2025-04-11T03:10:42.350Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 27,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1003,
+        "quantity": 81,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 10,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 77,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 23,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b3",
+    "orderNumber": 45409,
+    "storeNumber": 572,
+    "totalCases": 83,
+    "totalStop": 3,
+    "placedAt": "2025-03-26T21:21:25.497Z",
+    "toBeFulfilledBy": "2025-04-04T12:26:24.438Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1015,
+        "quantity": 35,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 28,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1018,
+        "quantity": 46,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b4",
+    "orderNumber": 45410,
+    "storeNumber": 573,
+    "totalCases": 84,
+    "totalStop": 1,
+    "placedAt": "2025-03-26T16:14:48.581Z",
+    "toBeFulfilledBy": "2025-04-07T09:02:48.618Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1003,
+        "quantity": 55,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b5",
+    "orderNumber": 45411,
+    "storeNumber": 574,
+    "totalCases": 146,
+    "totalStop": 3,
+    "placedAt": "2025-04-03T09:08:06.319Z",
+    "toBeFulfilledBy": "2025-04-13T19:10:03.732Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1014,
+        "quantity": 87,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1017,
+        "quantity": 32,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1003,
+        "quantity": 71,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 66,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b6",
+    "orderNumber": 45412,
+    "storeNumber": 575,
+    "totalCases": 82,
+    "totalStop": 1,
+    "placedAt": "2025-03-27T13:51:06.761Z",
+    "toBeFulfilledBy": "2025-04-08T09:28:06.807Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1003,
+        "quantity": 73,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 78,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b7",
+    "orderNumber": 45413,
+    "storeNumber": 576,
+    "totalCases": 134,
+    "totalStop": 2,
+    "placedAt": "2025-03-29T20:13:42.336Z",
+    "toBeFulfilledBy": "2025-04-07T07:30:37.892Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 92,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1000,
+        "quantity": 47,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 66,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1004,
+        "quantity": 11,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b8",
+    "orderNumber": 45414,
+    "storeNumber": 567,
+    "totalCases": 99,
+    "totalStop": 3,
+    "placedAt": "2025-03-24T15:44:22.612Z",
+    "toBeFulfilledBy": "2025-04-07T21:48:39.106Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1005,
+        "quantity": 31,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26b9",
+    "orderNumber": 45415,
+    "storeNumber": 568,
+    "totalCases": 114,
+    "totalStop": 1,
+    "placedAt": "2025-04-01T22:06:04.020Z",
+    "toBeFulfilledBy": "2025-04-11T09:11:41.606Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1016,
+        "quantity": 66,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1004,
+        "quantity": 17,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 46,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1008,
+        "quantity": 38,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26ba",
+    "orderNumber": 45416,
+    "storeNumber": 569,
+    "totalCases": 72,
+    "totalStop": 1,
+    "placedAt": "2025-04-04T03:27:00.732Z",
+    "toBeFulfilledBy": "2025-04-10T12:32:38.501Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1018,
+        "quantity": 93,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1001,
+        "quantity": 30,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26bb",
+    "orderNumber": 45417,
+    "storeNumber": 570,
+    "totalCases": 86,
+    "totalStop": 2,
+    "placedAt": "2025-03-29T04:13:02.247Z",
+    "toBeFulfilledBy": "2025-04-07T09:20:39.190Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 12,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 71,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1000,
+        "quantity": 19,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 92,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1008,
+        "quantity": 34,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26bc",
+    "orderNumber": 45418,
+    "storeNumber": 571,
+    "totalCases": 141,
+    "totalStop": 1,
+    "placedAt": "2025-03-23T16:51:16.642Z",
+    "toBeFulfilledBy": "2025-04-11T04:52:34.426Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1013,
+        "quantity": 71,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1019,
+        "quantity": 93,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 74,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 14,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26bd",
+    "orderNumber": 45419,
+    "storeNumber": 572,
+    "totalCases": 126,
+    "totalStop": 3,
+    "placedAt": "2025-03-24T12:17:49.910Z",
+    "toBeFulfilledBy": "2025-04-08T00:07:29.811Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1011,
+        "quantity": 61,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 43,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 64,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26be",
+    "orderNumber": 45420,
+    "storeNumber": 573,
+    "totalCases": 129,
+    "totalStop": 2,
+    "placedAt": "2025-04-02T11:07:48.606Z",
+    "toBeFulfilledBy": "2025-04-14T11:14:10.437Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 17,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1010,
+        "quantity": 3,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26bf",
+    "orderNumber": 45421,
+    "storeNumber": 574,
+    "totalCases": 79,
+    "totalStop": 1,
+    "placedAt": "2025-03-30T23:32:34.959Z",
+    "toBeFulfilledBy": "2025-04-14T11:54:34.034Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1017,
+        "quantity": 67,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1001,
+        "quantity": 33,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 98,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1018,
+        "quantity": 77,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c0",
+    "orderNumber": 45422,
+    "storeNumber": 575,
+    "totalCases": 80,
+    "totalStop": 1,
+    "placedAt": "2025-03-29T02:47:09.476Z",
+    "toBeFulfilledBy": "2025-04-11T07:28:36.017Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1003,
+        "quantity": 50,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1017,
+        "quantity": 35,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1012,
+        "quantity": 77,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1010,
+        "quantity": 67,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c1",
+    "orderNumber": 45423,
+    "storeNumber": 576,
+    "totalCases": 52,
+    "totalStop": 1,
+    "placedAt": "2025-03-23T18:28:24.231Z",
+    "toBeFulfilledBy": "2025-04-09T02:16:51.854Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1003,
+        "quantity": 98,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1009,
+        "quantity": 26,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c2",
+    "orderNumber": 45424,
+    "storeNumber": 567,
+    "totalCases": 77,
+    "totalStop": 3,
+    "placedAt": "2025-03-31T21:34:40.597Z",
+    "toBeFulfilledBy": "2025-04-09T22:42:52.999Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1018,
+        "quantity": 54,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 56,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c3",
+    "orderNumber": 45425,
+    "storeNumber": 568,
+    "totalCases": 144,
+    "totalStop": 3,
+    "placedAt": "2025-03-24T16:08:07.118Z",
+    "toBeFulfilledBy": "2025-04-15T13:22:13.333Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1018,
+        "quantity": 88,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 66,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 61,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c4",
+    "orderNumber": 45426,
+    "storeNumber": 569,
+    "totalCases": 66,
+    "totalStop": 3,
+    "placedAt": "2025-03-25T21:28:03.400Z",
+    "toBeFulfilledBy": "2025-04-08T21:21:30.488Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 87,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1017,
+        "quantity": 90,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1000,
+        "quantity": 82,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1017,
+        "quantity": 81,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1010,
+        "quantity": 85,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c5",
+    "orderNumber": 45427,
+    "storeNumber": 570,
+    "totalCases": 115,
+    "totalStop": 1,
+    "placedAt": "2025-03-23T20:02:56.801Z",
+    "toBeFulfilledBy": "2025-04-06T11:31:34.875Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1007,
+        "quantity": 90,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1011,
+        "quantity": 32,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 8,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 97,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c6",
+    "orderNumber": 45428,
+    "storeNumber": 571,
+    "totalCases": 135,
+    "totalStop": 1,
+    "placedAt": "2025-04-04T00:02:03.299Z",
+    "toBeFulfilledBy": "2025-04-06T13:13:24.772Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1010,
+        "quantity": 69,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c7",
+    "orderNumber": 45429,
+    "storeNumber": 572,
+    "totalCases": 140,
+    "totalStop": 1,
+    "placedAt": "2025-03-30T19:16:44.221Z",
+    "toBeFulfilledBy": "2025-04-08T01:59:47.476Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1008,
+        "quantity": 47,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c8",
+    "orderNumber": 45430,
+    "storeNumber": 573,
+    "totalCases": 75,
+    "totalStop": 1,
+    "placedAt": "2025-04-03T19:23:01.490Z",
+    "toBeFulfilledBy": "2025-04-14T03:35:51.868Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1004,
+        "quantity": 97,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1008,
+        "quantity": 47,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26c9",
+    "orderNumber": 45431,
+    "storeNumber": 574,
+    "totalCases": 51,
+    "totalStop": 3,
+    "placedAt": "2025-03-29T02:53:08.234Z",
+    "toBeFulfilledBy": "2025-04-15T12:33:00.846Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1014,
+        "quantity": 87,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26ca",
+    "orderNumber": 45432,
+    "storeNumber": 575,
+    "totalCases": 103,
+    "totalStop": 2,
+    "placedAt": "2025-03-29T12:01:35.008Z",
+    "toBeFulfilledBy": "2025-04-14T00:26:39.994Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 63,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 19,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1018,
+        "quantity": 42,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1009,
+        "quantity": 67,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 57,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26cb",
+    "orderNumber": 45433,
+    "storeNumber": 576,
+    "totalCases": 134,
+    "totalStop": 1,
+    "placedAt": "2025-03-29T02:14:44.157Z",
+    "toBeFulfilledBy": "2025-04-13T15:58:37.967Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1011,
+        "quantity": 65,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 35,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 45,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1013,
+        "quantity": 84,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26cc",
+    "orderNumber": 45434,
+    "storeNumber": 567,
+    "totalCases": 109,
+    "totalStop": 2,
+    "placedAt": "2025-03-24T02:12:13.866Z",
+    "toBeFulfilledBy": "2025-04-08T09:54:27.409Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1011,
+        "quantity": 18,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1010,
+        "quantity": 71,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26cd",
+    "orderNumber": 45435,
+    "storeNumber": 568,
+    "totalCases": 52,
+    "totalStop": 3,
+    "placedAt": "2025-04-02T06:34:12.018Z",
+    "toBeFulfilledBy": "2025-04-08T06:20:13.139Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1009,
+        "quantity": 10,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 33,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1004,
+        "quantity": 26,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26ce",
+    "orderNumber": 45436,
+    "storeNumber": 569,
+    "totalCases": 96,
+    "totalStop": 2,
+    "placedAt": "2025-04-01T00:34:11.401Z",
+    "toBeFulfilledBy": "2025-04-09T03:19:20.614Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 1,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1006,
+        "quantity": 4,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1011,
+        "quantity": 95,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1015,
+        "quantity": 41,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 11,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26cf",
+    "orderNumber": 45437,
+    "storeNumber": 570,
+    "totalCases": 79,
+    "totalStop": 3,
+    "placedAt": "2025-04-03T13:58:23.338Z",
+    "toBeFulfilledBy": "2025-04-10T06:33:03.032Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1011,
+        "quantity": 48,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26d0",
+    "orderNumber": 45438,
+    "storeNumber": 571,
+    "totalCases": 131,
+    "totalStop": 3,
+    "placedAt": "2025-04-02T19:23:59.267Z",
+    "toBeFulfilledBy": "2025-04-13T04:53:32.849Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 4,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1010,
+        "quantity": 15,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1016,
+        "quantity": 34,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1002,
+        "quantity": 69,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26d1",
+    "orderNumber": 45439,
+    "storeNumber": 572,
+    "totalCases": 90,
+    "totalStop": 3,
+    "placedAt": "2025-03-27T12:55:06.790Z",
+    "toBeFulfilledBy": "2025-04-05T16:31:38.708Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1000,
+        "quantity": 18,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26d2",
+    "orderNumber": 45440,
+    "storeNumber": 573,
+    "totalCases": 134,
+    "totalStop": 1,
+    "placedAt": "2025-03-24T11:30:01.194Z",
+    "toBeFulfilledBy": "2025-04-05T20:41:06.182Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 3,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1017,
+        "quantity": 60,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 47,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1003,
+        "quantity": 95,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1004,
+        "quantity": 38,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1010,
+        "quantity": 98,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26d3",
+    "orderNumber": 45441,
+    "storeNumber": 574,
+    "totalCases": 115,
+    "totalStop": 1,
+    "placedAt": "2025-03-24T12:34:38.137Z",
+    "toBeFulfilledBy": "2025-04-08T18:35:08.776Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1003,
+        "quantity": 16,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 78,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1006,
+        "quantity": 6,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1007,
+        "quantity": 31,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 26,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26d4",
+    "orderNumber": 45442,
+    "storeNumber": 575,
+    "totalCases": 50,
+    "totalStop": 3,
+    "placedAt": "2025-03-23T15:51:39.382Z",
+    "toBeFulfilledBy": "2025-04-13T21:48:52.800Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 2,
+    "urgent": true,
+    "items": [
+      {
+        "itemId": 1004,
+        "quantity": 22,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1014,
+        "quantity": 54,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  },
+  {
+    "_id": "67ef523cb9120f94f0da26d5",
+    "orderNumber": 45443,
+    "storeNumber": 576,
+    "totalCases": 87,
+    "totalStop": 3,
+    "placedAt": "2025-03-24T19:36:11.973Z",
+    "toBeFulfilledBy": "2025-04-07T10:34:07.083Z",
+    "completedStatus": false,
+    "assignedStatus": false,
+    "totalPallets": 5,
+    "urgent": false,
+    "items": [
+      {
+        "itemId": 1019,
+        "quantity": 100,
+        "pickedStatus": false,
+        "isShipped": false
+      },
+      {
+        "itemId": 1005,
+        "quantity": 27,
+        "pickedStatus": false,
+        "isShipped": false
+      }
+    ]
+  }
+]
