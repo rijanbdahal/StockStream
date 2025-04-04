@@ -30,7 +30,6 @@ router.get("/gettask", async (req, res) => {
     }
 });
 
-
 router.get("/skip", async (req, res) => {
     try {
         const pickingPallet = await PickingPallet.find({ Quantity: 0 }).sort({ _id: 1 }).limit(1);
@@ -65,19 +64,22 @@ router.post("/verifypalletid", async (req, res) => {
 
     try {
         const pallet = await Pallet.findOne({ palletID: palletIDNumber });
-        const locationId = pallet.locationId;
-        const location = await Location.findOne({locationId:locationId});
-        location.status = true;
-        location.save();
         if (!pallet) {
             return res.status(404).json({ error: "Pallet not found" });
         }
+
+        const location = await Location.findOne({ locationId: pallet.locationId });
+        if (!location) {
+            return res.status(400).json({ error: "Invalid location" });
+        }
+
+        location.status = true;
+        await location.save();
 
         const pickingPallet = await PickingPallet.findOne({ productId: pallet.productID });
         if (!pickingPallet) {
             return res.status(404).json({ error: "Picking pallet not found" });
         }
-
 
         return res.json({ toLocationId: pickingPallet.locationId });
     } catch (err) {
@@ -112,7 +114,6 @@ router.post("/verifycheckdigit", async (req, res) => {
             return res.status(400).json({ error: "Incorrect check digit" });
         }
 
-
         const palletInfo = new PalletInfo({
             productID: pallet.productID,
             palletID: pallet.palletID,
@@ -128,15 +129,16 @@ router.post("/verifycheckdigit", async (req, res) => {
 
         await palletInfo.save();
 
-
         pickingPallet.Quantity = palletInfo.totalCases;
         location.status = false;
 
         await pickingPallet.save();
         await location.save();
 
-
-        await Pallet.deleteOne({ palletID });
+        const deleteResult = await Pallet.deleteOne({ palletID });
+        if (deleteResult.deletedCount === 0) {
+            return res.status(404).json({ error: "Pallet deletion failed" });
+        }
 
         return res.status(200).json({ success: true, message: "Verified successfully!" });
     } catch (err) {

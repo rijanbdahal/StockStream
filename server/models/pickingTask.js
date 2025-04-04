@@ -23,7 +23,7 @@ const PickingTaskSchema = new mongoose.Schema({
     ]
 });
 
-// Auto-increment `taskId` before saving
+
 PickingTaskSchema.pre("save", async function (next) {
     try {
         const task = this;
