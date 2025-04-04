@@ -105,7 +105,7 @@ const QueryDockingEntry = () => {
 
 
             {dockingEntry && (
-                <div className="table-container">
+                <div className="docking-entry-container">
                     <table>
                         <thead>
                         <tr>
